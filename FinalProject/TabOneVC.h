@@ -20,6 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *openGLVersionLabel;
 
 
-@property (nonatomic) float sculptMovesCount;
+
 
 @end

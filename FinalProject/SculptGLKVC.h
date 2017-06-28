@@ -11,4 +11,12 @@
 
 @interface SculptGLKVC : GLKViewController
 
+
+//Float to hold number of sculpts moves made
+@property (nonatomic) float sculptMovesCount;
+
+//Helper Method to save Data
+-(void)saveDataToCoreData;
+
+
 @end

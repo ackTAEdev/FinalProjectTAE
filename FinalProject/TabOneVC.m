@@ -7,8 +7,6 @@
 //
 
 #import "TabOneVC.h"
-#import "AppDelegate.h"
-#import "SculptObject+CoreDataClass.h"
 
 @interface TabOneVC ()
 
@@ -16,6 +14,15 @@
 
 @implementation TabOneVC
 
+# pragma mark - viewDidLoad
+
+
+/**
+ Method:viewDidLoad
+ 
+ Description
+ - Load the glkView
+ */
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -25,30 +32,14 @@
 }
 
 
--(void)viewDidDisappear:(BOOL)animated {
-    
-    //Save Data to CoreData
-    [self saveDataToCoreData];
-    
-}
+# pragma mark - didReceiveMemoryWarning
 
--(void)saveDataToCoreData{
-    
-    //TODO Tasks to Store Data into CoreData
-    //1. Get a reference the app delegate
-    AppDelegate *appD = (AppDelegate *) [[UIApplication sharedApplication] delegate];
-    
-    //2. Create a local reference to the context
-    NSManagedObjectContext *context = [appD.persistentContainer viewContext];
-    
-    //3. Create an object in the content
-    SculptObject *newSculptObject = [[SculptObject alloc] initWithContext:context];
-    
-    //4. Set the values
-    [newSculptObject setSculptMoves:_sculptMovesCount];
-}
-
-
+/**
+ Method:didReceiveMemoryWarning
+ 
+ Description
+ - 
+ */
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -63,5 +54,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

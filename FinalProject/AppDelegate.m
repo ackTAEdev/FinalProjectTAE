@@ -33,6 +33,8 @@
  - Setups View Controllers of TabBarVC, TabOne, TabTwo
  
  */
+# pragma mark - tabBarVCSetup
+
 -(void) tabBarVCSetup{
     
     /*Init View Controllers to be embeeded into a Tab Bar View Controller */
