@@ -27,4 +27,8 @@
 
 - (IBAction)scheduleSculptTimeAction:(id)sender;
 
+/*Methods*/
+
+-(void)saveImageToFile;
+
 @end

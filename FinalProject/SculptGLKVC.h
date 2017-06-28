@@ -28,7 +28,7 @@
 -(void)saveDataToCoreData;
 
 //Method to take ScreenShotPhoto
--(void)takeScreenShotofSculpt;
+-(UIImage*)takeScreenShotofSculpt;
 
 
 

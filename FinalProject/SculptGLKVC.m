@@ -25,11 +25,15 @@
     
     //Save Data to CoreData
     [self saveDataToCoreData];
+    
+    //Screenshot and save image into a file
+    [self screenShotAndSaveSculptImage];
+    
 }
 
 
 # pragma mark - sculptMoveCounter
-/**
+/** TODO
  Method: sculptMoveCounter
  
  Description:
@@ -64,6 +68,93 @@
     
     //4. Set the values
     [newSculptObject setSculptMoves:_sculptMovesCount];
+}
+
+
+#pragma  - mark takeScreenShotofSculpt
+
+/** TODO
+ Method: takeScreenShotofSculpt
+ 
+ Description
+ - Takes a ScreenShot of the Sculpt in the Window
+ */
+
+- (UIImage*)takeScreenShotofSculpt {
+    
+    //Init UIImage
+    UIImage *screenShotSculpt = [[UIImage alloc] initWithData:<#(nonnull NSData *)#> ];
+    
+    //Return UIIMage
+    return screenShotSculpt;
+    
+}
+
+
+#pragma  - mark createDirectoryAndFile
+/**
+ Method: createDirectoryAndFile
+ 
+ Description
+ - Helper Method
+ - Creates and initiliazes a directory and File
+ */
+-(void)createDirectoryAndFile {
+    //Init fileManager
+    NSFileManager *fileManager = [[NSFileManager alloc] init];
+    
+    //Init destination
+    NSString *destination = [NSTemporaryDirectory() stringByAppendingPathComponent:@"ImageDirectory"];
+    
+    //Init error
+    NSError *error;
+    
+    //Create Directory with error checking
+    [fileManager createDirectoryAtPath:destination withIntermediateDirectories:YES attributes:nil error:&error];
+    
+    //Error Checking Block
+    if(!error) {
+        
+        //Create image file path
+        NSString *imageFilePath = [destination stringByAppendingPathComponent:@"sculptImage.png"];
+        
+        //Create Image File
+        [fileManager createFileAtPath:imageFilePath contents:nil attributes:nil];
+        
+        //Get the sculpted image
+        UIImage *imageSculpt = [self takeScreenShotofSculpt];
+        
+        //Convert UIImage object into NSData formatted according to PNG spec
+        NSData *imageData = UIImagePNGRepresentation(imageSculpt);
+        
+        //Write Image to the File
+        [imageData writeToFile:imageFilePath atomically:YES];
+        
+        
+    } else {
+        //Print Error message if Directory failed
+        NSLog(@"Error: %@", [error localizedDescription]);
+    }//End of Else Loop
+    
+}
+
+
+#pragma  - mark screenShotAndSaveSculptImage
+
+/**
+ Method: screenShotAndSaveSculptImages
+ 
+ Description
+ - Helper Method
+ - Takes screenshot of sculpt
+ - Saves screenshot into file
+ 
+ */
+-(void)screenShotAndSaveSculptImage{
+    //Screen of sculpt
+    [self takeScreenShotofSculpt];
+    //Saves sculpt image into a file
+    [self createDirectoryAndFile];
 }
 
 

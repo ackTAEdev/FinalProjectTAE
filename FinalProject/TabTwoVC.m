@@ -23,6 +23,9 @@
     //Fetch Data to Store into VC Label
     [self fetchDataFromCoreData];
     
+    //Read Image from File to load into UI View
+    [self setupPreviewSculptImage];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -190,4 +193,56 @@
     
     
 }
+
+
+#pragma  - mark readDataFromFile
+
+/**
+ Method: readDataFromFile
+ 
+ Description
+ - Reads from Directory to find an Image
+ - Returns a sculpted image
+
+ @return return UIImage of Sculpt
+ */
+-(UIImage*)readDataFromFile{
+    
+    //Get the File Location & File Name
+    
+    //Init destination
+    NSString *destination = [NSTemporaryDirectory() stringByAppendingPathComponent:@"ImageDirectory"];
+    
+    //Init image file path
+    NSString *imageFileName = @"sculptImage.png";
+    
+    //Init Handle on File
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:[destination stringByAppendingPathComponent:imageFileName]];
+    
+    //Read the Data
+    NSData *fileData = [fileHandle readDataToEndOfFile];
+    
+    //Convert data into UIImage
+    UIImage *imageLoaded = [[UIImage alloc] initWithData:fileData];
+    
+    return imageLoaded;
+}
+
+
+#pragma  - mark setupPreviewSculptImage
+/**
+ Method: setupPreviewSculptImage
+ 
+ Description
+ - Sets the UIImage to the Sculpted Image
+ - Calls a helper method that reads the image from a file
+ */
+
+-(void)setupPreviewSculptImage{
+    
+ _sculptUIImage = [self readDataFromFile];
+    
+}
+
+
 @end
