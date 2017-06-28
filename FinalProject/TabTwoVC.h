@@ -13,6 +13,9 @@
 /*Outlets*/
 @property (strong, nonatomic) IBOutlet UIImageView *sculptImageView;
 
+@property (strong, nonatomic) IBOutlet UILabel *sculptMovesLabelView;
+
+
 /*Actions*/
 
 - (IBAction)shareFacebookAction:(id)sender;

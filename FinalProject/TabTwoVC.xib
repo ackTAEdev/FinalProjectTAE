@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabTwoVC">
             <connections>
                 <outlet property="sculptImageView" destination="04g-U6-YxV" id="URJ-we-q5S"/>
+                <outlet property="sculptMovesLabelView" destination="AZe-Pm-LXD" id="bUj-QA-QLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,6 +48,12 @@
                         <constraint firstAttribute="height" constant="359" id="FhK-S7-kOP"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Sculpt No Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Pm-LXD">
+                    <rect key="frame" x="76.5" y="6" width="167" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -54,10 +61,12 @@
                 <constraint firstItem="04g-U6-YxV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AIy-1q-Cdv"/>
                 <constraint firstItem="Wwh-gF-Zx1" firstAttribute="leading" secondItem="Fb5-MU-HCR" secondAttribute="trailing" constant="27" id="HsV-Mw-P2v"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="top" secondItem="04g-U6-YxV" secondAttribute="bottom" constant="22" id="Hwj-uo-JwQ"/>
+                <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="AZe-Pm-LXD" secondAttribute="bottom" constant="8" symbolic="YES" id="PMD-4n-9pS"/>
                 <constraint firstItem="nux-VH-prL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rd6-1Y-y53"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="baseline" secondItem="Wwh-gF-Zx1" secondAttribute="baseline" id="aUS-XR-rGw"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="aZE-AQ-hXy"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="dDo-fp-TJ1"/>
+                <constraint firstItem="AZe-Pm-LXD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e0D-Bh-Koz"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="xf5-cl-FFQ"/>
             </constraints>
             <point key="canvasLocation" x="73" y="54"/>
