@@ -30,6 +30,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+/**
+ Method: fetchDataFromCoreData
+ 
+ Description
+ - Fetch Data from CoreData file
+ - Retrive sculpted stroke count
+ - Assignment of count to the field value of sculptMovesLabelView
+ */
+#pragma  - mark fetchDataFromCoreData
+
 -(void)fetchDataFromCoreData{
     
     //1. Get a refernecne to the app delegate
@@ -63,6 +74,7 @@
             [string appendFormat:@"SculptMoves: %f", foundObject.sculptMoves];
         }//End of For Loop
         
+        //8. Assign value to the text
         self.sculptMovesLabelView.text = string;
     }//End of If Loop
 }
@@ -77,12 +89,105 @@
 }
 */
 
+
+
+/**
+ Method: shareFacebookAction
+ 
+ Description
+ - Post Sculpted Image to Facebook
+
+ @param sender
+ */
+#pragma  - mark shareFacebookAction
+
 - (IBAction)shareFacebookAction:(id)sender {
+
+    //Check if Facebook is ready to post information
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        //Device is able to send a Facebook Message
+
+        //Init Facebook Message Controller
+        SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        
+        //Init Image to be Posted
+        UIImage *postImage = _sculptUIImage;
+        
+        //Init Text to be Posted
+        NSString *postText = @"Check out my new Sculpt!";
+
+        //Set Text
+        [composeController setInitialText:postText];
+        
+        //Set Image
+        [composeController addImage:postImage];
+        
+        //Assign composeController to presentVC
+        [self presentViewController:composeController animated:YES completion:nil];
+        
+        
+    }
+
 }
+
+
+/**
+ Method - shareEmailAction
+ 
+ Description:
+ - Sends Sculpted image into an Email
+
+ @param sender  User Clicked Email Button
+ */
+#pragma  - mark shareEmailAction
 
 - (IBAction)shareEmailAction:(id)sender {
+    
+    //Call  Helper Method specifiying Mail Activity
+    [self launchWithActivities:@[UIActivityTypeMail]];
 }
 
+
+
+/**
+ Description
+ - Helper method to init activity view controller
+ - Setups email to accept an NSArray
+ - NSArray contains sculpted image and a message.
+
+ @param activities activities Mail Actvity
+ */
+#pragma  - mark launchWithActivities
+
+-(void)launchWithActivities:(nullable NSArray *) activities {
+    
+    //Create String to be Posted in Email
+    NSString *postText = @"I've just created a Sculpt!";
+    
+    //Init NSArray to Send into initWithActivityItems
+    NSArray *activityItems = @[postText, _sculptUIImage];
+    
+    //Init activity View Controller with activities & NSArray
+    UIActivityViewController *actVC = [[UIActivityViewController alloc] initWithActivityItems: activityItems applicationActivities:activities];
+    
+    //Set the Activitiy View Controller
+    [self presentViewController:actVC animated:YES completion:nil];
+    
+}
+
+/**
+ Method - scheduleSculptTimeAction
+ 
+ Description:
+ - Schedules an EventKit to Load a Time to Sculpt
+
+ @param sender  User Clicked Scedule Button
+ */
+#pragma  - mark scheduleSculptTimeAction
+
 - (IBAction)scheduleSculptTimeAction:(id)sender {
+    
+    
 }
 @end

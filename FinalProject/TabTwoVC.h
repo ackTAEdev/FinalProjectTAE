@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
 
 @interface TabTwoVC : UIViewController
 
@@ -14,6 +15,8 @@
 @property (strong, nonatomic) IBOutlet UIImageView *sculptImageView;
 
 @property (strong, nonatomic) IBOutlet UILabel *sculptMovesLabelView;
+
+@property (strong, nonatomic) UIImage *sculptUIImage;
 
 
 /*Actions*/

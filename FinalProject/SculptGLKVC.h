@@ -9,14 +9,27 @@
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
 
+
 @interface SculptGLKVC : GLKViewController
 
+
+/*Fields*/
 
 //Float to hold number of sculpts moves made
 @property (nonatomic) float sculptMovesCount;
 
+/*Methods*/
+
+//Helper Method to store sculptMoveCount
+-(void)sculptMoveCounter;
+
+
 //Helper Method to save Data
 -(void)saveDataToCoreData;
+
+//Method to take ScreenShotPhoto
+-(void)takeScreenShotofSculpt;
+
 
 
 @end
