@@ -10,4 +10,15 @@
 
 @interface TabTwoVC : UIViewController
 
+/*Outlets*/
+@property (strong, nonatomic) IBOutlet UIImageView *sculptImageView;
+
+/*Actions*/
+
+- (IBAction)shareFacebookAction:(id)sender;
+
+- (IBAction)shareEmailAction:(id)sender;
+
+- (IBAction)scheduleSculptTimeAction:(id)sender;
+
 @end

@@ -34,4 +34,12 @@
 }
 */
 
+- (IBAction)shareFacebookAction:(id)sender {
+}
+
+- (IBAction)shareEmailAction:(id)sender {
+}
+
+- (IBAction)scheduleSculptTimeAction:(id)sender {
+}
 @end

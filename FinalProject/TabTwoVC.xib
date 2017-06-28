@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabTwoVC">
             <connections>
+                <outlet property="sculptImageView" destination="04g-U6-YxV" id="URJ-we-q5S"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,14 +23,23 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wwh-gF-Zx1">
                     <rect key="frame" x="190" y="416" width="97" height="30"/>
                     <state key="normal" title="Share in Email"/>
+                    <connections>
+                        <action selector="shareEmailAction:" destination="-1" eventType="touchUpInside" id="us1-eZ-DIZ"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fb5-MU-HCR">
                     <rect key="frame" x="34" y="416" width="129" height="30"/>
                     <state key="normal" title="Share to FaceBook"/>
+                    <connections>
+                        <action selector="shareFacebookAction:" destination="-1" eventType="touchUpInside" id="Spf-QK-gZN"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nux-VH-prL">
                     <rect key="frame" x="85" y="504" width="150" height="30"/>
                     <state key="normal" title="Schedule Sculpt Time"/>
+                    <connections>
+                        <action selector="scheduleSculptTimeAction:" destination="-1" eventType="touchUpInside" id="VH7-fc-zj8"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="04g-U6-YxV">
                     <rect key="frame" x="22" y="35" width="276" height="359"/>

@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabOneVC">
             <connections>
+                <outlet property="appNameLabelView" destination="4zk-v4-okI" id="TFU-9I-Fei"/>
+                <outlet property="glkView" destination="PQO-gN-F7F" id="Hu7-Wx-nHj"/>
+                <outlet property="openGLVersionLabel" destination="xB1-Jj-ZOh" id="yJK-DZ-Cip"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

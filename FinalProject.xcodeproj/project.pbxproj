@@ -19,6 +19,9 @@
 		DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0E31F03AADA00D091FC /* TabTwoVC.m */; };
 		DF51A0E61F03AADA00D091FC /* TabTwoVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51A0E41F03AADA00D091FC /* TabTwoVC.xib */; };
 		DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0EB1F03AB2600D091FC /* TabBarRootVC.m */; };
+		DF51A0F01F03C3BC00D091FC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0EF1F03C3BC00D091FC /* GLKit.framework */; };
+		DF51A0F21F03C3C200D091FC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0F11F03C3C200D091FC /* OpenGLES.framework */; };
+		DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,10 @@
 		DF51A0E41F03AADA00D091FC /* TabTwoVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabTwoVC.xib; sourceTree = "<group>"; };
 		DF51A0EA1F03AB2600D091FC /* TabBarRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarRootVC.h; sourceTree = "<group>"; };
 		DF51A0EB1F03AB2600D091FC /* TabBarRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRootVC.m; sourceTree = "<group>"; };
+		DF51A0EF1F03C3BC00D091FC /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		DF51A0F11F03C3C200D091FC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SculptGLKVC.h; sourceTree = "<group>"; };
+		DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SculptGLKVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF51A0F21F03C3C200D091FC /* OpenGLES.framework in Frameworks */,
+				DF51A0F01F03C3BC00D091FC /* GLKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +87,7 @@
 				DF51A0B11F03A37800D091FC /* FinalProject */,
 				DF51A0CE1F03A37800D091FC /* FinalProjectTests */,
 				DF51A0B01F03A37800D091FC /* Products */,
+				DF51A0EE1F03C3BC00D091FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,8 +192,19 @@
 		DF51A0ED1F03ADD700D091FC /* GLKit */ = {
 			isa = PBXGroup;
 			children = (
+				DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */,
+				DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */,
 			);
 			name = GLKit;
+			sourceTree = "<group>";
+		};
+		DF51A0EE1F03C3BC00D091FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF51A0F11F03C3C200D091FC /* OpenGLES.framework */,
+				DF51A0EF1F03C3BC00D091FC /* GLKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +314,7 @@
 			files = (
 				DF51A0B71F03A37800D091FC /* AppDelegate.m in Sources */,
 				DF51A0C01F03A37800D091FC /* FinalProject.xcdatamodeld in Sources */,
+				DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */,
 				DF51A0B41F03A37800D091FC /* main.m in Sources */,
 				DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */,
 				DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */,
@@ -497,6 +519,7 @@
 				DF51A0D61F03A37900D091FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DF51A0D71F03A37900D091FC /* Build configuration list for PBXNativeTarget "FinalProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +528,7 @@
 				DF51A0D91F03A37900D091FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

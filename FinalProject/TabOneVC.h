@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SculptGLKVC.h"
 
-@interface TabOneVC : UIViewController
+@interface TabOneVC : UIViewController 
+
+/*Outlets*/
+
+@property (strong, nonatomic) IBOutlet UILabel *appNameLabelView;
+
+@property (strong, nonatomic) IBOutlet SculptGLKVC *glkView;
+
+@property (strong, nonatomic) IBOutlet UILabel *openGLVersionLabel;
+
 
 @end
