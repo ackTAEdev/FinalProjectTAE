@@ -71,7 +71,7 @@
  @param websiteName Site to Fetch
  @return return value DataFeteched
  */
--(NSURLSessionTask*)fetchDataFromSite:(NSString*) websiteName {
+-(void)fetchDataFromSite:(NSString*) websiteName {
     
     //Init NSURL Session
     NSURLSession *session = [NSURLSession sharedSession];
@@ -89,13 +89,16 @@
         
         NSError *jsonError = nil;
         
-        id JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
         
         if (jsonError) {
             NSLog(@"Parsing Error: %@", jsonError.localizedDescription);
         }
         else {
-            NSLog(@"Total Results found: %@", [JSON objectForKey:@"totalResults"]);
+            
+            //Parse Data
+            [self parseFetchedDataOpenGL:dictionary];
+            
         }//End of Else Blcok
         
     };//End of Block
@@ -106,7 +109,6 @@
     //Start dataTask
     [dataTask resume];
     
-    return dataTask;
 }
 
 #pragma  - mark setupWebServiceWikipediaOpenGLVersion
@@ -125,10 +127,9 @@
     NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0";
     
     //Init DataTask by Fetching Data
-  NSURLSessionTask *dataTask =  [self fetchDataFromSite:urlWikiOpenGL];
+    [self fetchDataFromSite:urlWikiOpenGL];
     
-    //Parse Data & Set Version
-     _openGLVersionNumber = [self parseFetchedDataOpenGL:dataTask];
+   
     
     //Store Data into CoreData
     [self saveDataToCoreData];
@@ -222,26 +223,89 @@
  - Perform JSON Dictionary Key Value Searching
  - Perform String Parsing
  - Identitfy OpenGL Version
- - Return
  
- @param dataTask FetchedData
+ - Help:  https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0
+ 
+ @param dict FetchedData
  @return  OpenGL Version
  */
--(float)parseFetchedDataOpenGL:(NSURLSessionTask*) dataTask{
+-(float)parseFetchedDataOpenGL:(NSDictionary*) dict{
     
-    //HELP: https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0
-    
-    //TODO: Dictionary JSON Parsing : batchcomplete.query.pages.22497.revisions ENTER ARRAY *. STORE VALUE FOR KEY "*"
+    //Init & Set ParseArrayNo_1
+    NSMutableArray *parseArrayNo_1 = [dict valueForKey:@"query.pages.22497.revisions"];
 
+    //Int & Set  Dict
+    NSDictionary *tempDict = parseArrayNo_1[0];
     
-    //TODO: String Seperate by '\n|' into array
+    //Init & Set Another Array
+    NSString *string = [tempDict valueForKey:@"*"];
     
-    //TODO: Search String Array for "latest release version"
+    //Init Another Parse Array
+    NSArray *parseArrayNo_2 = [string componentsSeparatedByString:@"\n"];
     
-        //TODO: String Scanner scan for float & return float
+    //Init NSString
+    NSString *matchedString = [[NSString alloc] init];
     
-    return ;
+    //Init Searched String
+    NSString *searchString = @"latest release version";
+    
+    //Search Array for String Match
+    for (int i = 0; i < parseArrayNo_2.count; i++) {
+        
+        //Check if String Matches Intended String
+        if(parseArrayNo_2[i] == searchString) {
+            
+            //Assign Value to MatchString
+            matchedString =  parseArrayNo_2[i];
+            
+        }//End of If Loop
+    }//End of For Loop
 
+    //Parse Number from the String
+    float number = [self numberFromString:matchedString];
+    
+    //Assign Number to Field
+    _openGLVersionNumber = number;
+    
+    //Return the number
+    return number;
+
+}
+
+
+
+/**
+ Method:numberFromString
+ 
+ Description:
+ - Helper Method
+ - Parses string to find a number
+ 
+ @param passedString <#passedString description#>
+ @return <#return value description#>
+ */
+-(float)numberFromString: (NSString*) passedString{
+    
+    //Init NSString
+    NSString *numberString;
+    
+    //Init Scanner
+    NSScanner *scanner = [NSScanner scannerWithString:passedString];
+    
+    //Init CharacterSet
+    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    
+    // Throw away characters before the first number.
+    [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
+    
+    // Collect numbers.
+    [scanner scanCharactersFromSet:numbers intoString:&numberString];
+    
+    // Get Result
+    float number = [numberString floatValue];
+    
+    //Return Number
+    return number;
 }
 
 @end

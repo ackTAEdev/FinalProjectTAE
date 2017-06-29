@@ -28,6 +28,7 @@
 		DF89F9811F0539E700775D57 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9801F0539E700775D57 /* EventKit.framework */; };
 		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
 		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
+		DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF89F9871F053EA100775D57 /* WikipediaManager.m */; };
 		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		DF89F9801F0539E700775D57 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		DF89F9821F0539ED00775D57 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		DF89F9861F053EA100775D57 /* WikipediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaManager.h; sourceTree = "<group>"; };
+		DF89F9871F053EA100775D57 /* WikipediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManager.m; sourceTree = "<group>"; };
 		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +172,8 @@
 				DF51A0BE1F03A37800D091FC /* FinalProject.xcdatamodeld */,
 				DF51A0B51F03A37800D091FC /* AppDelegate.h */,
 				DF51A0B61F03A37800D091FC /* AppDelegate.m */,
+				DF89F9861F053EA100775D57 /* WikipediaManager.h */,
+				DF89F9871F053EA100775D57 /* WikipediaManager.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */,
 				DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */,
 				DF51A0E01F03AAC100D091FC /* TabOneVC.m in Sources */,
+				DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

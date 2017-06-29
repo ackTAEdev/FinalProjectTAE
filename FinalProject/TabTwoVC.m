@@ -215,7 +215,15 @@
     //Request Access To Entity
     [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
         //Error Checking
-        if (!granted) { return; }
+        if (!granted) {
+            
+            //Error Log
+            NSLog(@"Permission not granted by user to set EventKit to Calender");
+            
+            //Default Return
+            return;
+        
+        }
         
         //Init EKEvent Item
         EKEvent *event = [EKEvent eventWithEventStore:store];
