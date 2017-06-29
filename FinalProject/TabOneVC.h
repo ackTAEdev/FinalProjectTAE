@@ -19,6 +19,9 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *openGLVersionLabel;
 
+@property (nonatomic)  float openGLVersionNumber;
+
+
 
 
 

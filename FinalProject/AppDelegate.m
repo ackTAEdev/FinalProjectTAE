@@ -21,6 +21,9 @@
     //Setup TabBar View Controller with it's View Controllers
     [self tabBarVCSetup];
     
+    //Setup Settings Bundles
+    [self setupSettingsBundle];
+    
     return YES;
 }
 
@@ -59,6 +62,32 @@
     
 }
 
+#pragma -mark setupSettingsBundle
+
+/**
+ Method: setupSettingsBundle
+ 
+ Description
+ - Setups up the Settings Bundle
+ */
+-(void)setupSettingsBundle {
+    
+    //Init NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Check if Enabled Preference
+    if (![defaults valueForKey:@"enabled_preference"]) {
+        
+        //Set Settings to Off position
+        [defaults setBool:NO forKey:@"enabled_preference"];
+        
+    }//End of if loop
+    
+    //Set the Defaults
+    [defaults synchronize];
+    
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

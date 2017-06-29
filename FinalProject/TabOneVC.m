@@ -7,6 +7,8 @@
 //
 
 #import "TabOneVC.h"
+#import "AppDelegate.h"
+#import "SculptObject+CoreDataClass.h"
 
 @interface TabOneVC ()
 
@@ -15,8 +17,6 @@
 @implementation TabOneVC
 
 # pragma mark - viewDidLoad
-
-
 /**
  Method:viewDidLoad
  
@@ -29,6 +29,9 @@
     
     //Set viewDidLoad of glkView
     [_glkView viewDidLoad];
+    
+    //Fetch, Parse, Store, Retrieve & Set OpenGLVersion
+    [self setupWebServiceWikipediaOpenGLVersion];
 }
 
 
@@ -55,5 +58,190 @@
 }
 */
 
+
+#pragma - mark fetchDataFromSite
+/**
+ Method: fetchDataFromSite
+ 
+ Description
+ - Helper Method
+ - Fetches Data from a Website
+ - Returns data
+ 
+ @param websiteName Site to Fetch
+ @return return value DataFeteched
+ */
+-(NSURLSessionTask*)fetchDataFromSite:(NSString*) websiteName {
+    
+    //Init NSURL Session
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    //Init URL
+    NSURL *url = [NSURL URLWithString:websiteName];
+    
+    //Error Checking
+    id completionBlock = ^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        if(error){
+            //Return Log
+            NSLog(@"Error: %@", error.localizedDescription);
+        }
+        
+        NSError *jsonError = nil;
+        
+        id JSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
+        
+        if (jsonError) {
+            NSLog(@"Parsing Error: %@", jsonError.localizedDescription);
+        }
+        else {
+            NSLog(@"Total Results found: %@", [JSON objectForKey:@"totalResults"]);
+        }//End of Else Blcok
+        
+    };//End of Block
+    
+    //Init Data Task
+    NSURLSessionTask *dataTask = [session dataTaskWithURL:url completionHandler:completionBlock];
+    
+    //Start dataTask
+    [dataTask resume];
+    
+    return dataTask;
+}
+
+#pragma  - mark setupWebServiceWikipediaOpenGLVersion
+/**
+ 
+ Description
+ - Fetch, Parse, & Set OpenGL Version Number from Wikipedia
+ - Store, & Fetch OpenGLVersion from CoreData
+ - Assign Label Values
+ */
+-(void)setupWebServiceWikipediaOpenGLVersion{
+    
+    //TODO: Make Asynchronous Call
+    
+    //Init URL with OpenGL using mediaWiki API
+    NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0";
+    
+    //Init DataTask by Fetching Data
+  NSURLSessionTask *dataTask =  [self fetchDataFromSite:urlWikiOpenGL];
+    
+    //Parse Data & Set Version
+     _openGLVersionNumber = [self parseFetchedDataOpenGL:dataTask];
+    
+    //Store Data into CoreData
+    [self saveDataToCoreData];
+    
+    //Fetch Data from CoreData
+    [self fetchDataFromCoreData];
+    
+}
+
+/**
+ Method: fetchDataFromCoreData
+ 
+ Description
+ - Fetch Data from CoreData file
+ - Retrive OpenGL Version Number
+ - Assignment of OpenGL Version Number to the field value of openGLVersionLabel
+ */
+#pragma  - mark fetchDataFromCoreData
+
+-(void)fetchDataFromCoreData{
+    
+    //1. Get a refernecne to the app delegate
+    AppDelegate *appD = (AppDelegate *) [[UIApplication sharedApplication]delegate];
+    
+    //2. Create a local reference to the context
+    NSManagedObjectContext *context = [appD.persistentContainer viewContext];
+    
+    //3. Create fetch request the Contact entity
+    NSFetchRequest *fetch = [SculptObject fetchRequest];
+    
+    //4. Create a predicate for the search
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"OpenGLVersion"];
+    
+    //5. Set the predicate the search
+    [fetch setPredicate:predicate];
+    
+    //6. Fetch the items
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:fetch error:&error];
+    
+    //7a. Set the message if no items are found
+    if ([objects count] ==0) {
+        _openGLVersionLabel.text = @"OpenGL Version: 4.1";
+    } else {
+        
+        //7b. Create a mutable string with the details of the contacts found
+        NSMutableString *string = [NSMutableString string];
+        
+        for (SculptObject *foundObject in objects) {
+            [string appendFormat:@"OpenGLVersion: %f", foundObject.openGLVersion];
+        }//End of For Loop
+        
+        //8. Assign value to the text
+        _openGLVersionLabel.text = string;
+    }//End of If Loop
+}
+
+# pragma mark - saveDataToCoreData
+/**
+ Method: saveDataToCoreData
+ 
+ Description:
+ - Save OpenGLVersion to the CoreData
+ 
+ */
+-(void)saveDataToCoreData{
+    
+    //TODO Tasks to Store Data into CoreData
+    //1. Get a reference the app delegate
+    AppDelegate *appD = (AppDelegate *) [[UIApplication sharedApplication] delegate];
+    
+    //2. Create a local reference to the context
+    NSManagedObjectContext *context = [appD.persistentContainer viewContext];
+    
+    //3. Create an object in the content
+    SculptObject *newSculptObject = [[SculptObject alloc] initWithContext:context];
+    
+    //4. Set the values
+    //[newSculptObject setSculptMoves:_openGLVersionNumber];
+}
+
+
+#pragma  - mark parseFetchedDataOpenGL
+/** TODO
+ Method:parseFetchedDataOpenGL
+ 
+ 
+ Description
+ - Helper Method
+ - Parse Data Task
+ - Perform JSON Dictionary Key Value Searching
+ - Perform String Parsing
+ - Identitfy OpenGL Version
+ - Return
+ 
+ @param dataTask FetchedData
+ @return  OpenGL Version
+ */
+-(float)parseFetchedDataOpenGL:(NSURLSessionTask*) dataTask{
+    
+    //HELP: https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0
+    
+    //TODO: Dictionary JSON Parsing : batchcomplete.query.pages.22497.revisions ENTER ARRAY *. STORE VALUE FOR KEY "*"
+
+    
+    //TODO: String Seperate by '\n|' into array
+    
+    //TODO: Search String Array for "latest release version"
+    
+        //TODO: String Scanner scan for float & return float
+    
+    return ;
+
+}
 
 @end

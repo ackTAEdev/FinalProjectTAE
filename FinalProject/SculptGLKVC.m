@@ -163,4 +163,32 @@
 }
 
 
+
+/**
+ Method: changeBackgroundColorToUserSetting
+ 
+ Description
+ - Helper Method
+ - Reads User Defaults
+ - Assigns Color accordingly
+
+ @return savedVal  
+ -     If savedVal = 0 : Assume Keep Background Color
+ -     Else if SavedVal !0 : Assume Change Background Color
+
+ */
+#pragma -mark getUserSettingForBackgroundColor
+-(NSInteger)getUserSettingForBackgroundColor{
+    
+    //Init NSUserDefaults
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    //Fetch User Setting Value
+    NSInteger savedVal = [[defaults valueForKey:@"enabled_preferences"] integerValue];
+    
+    //Return Value
+    return savedVal;
+
+}
+
 @end

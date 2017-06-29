@@ -6,11 +6,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabTwoVC">
             <connections>
+                <outlet property="emailView" destination="35z-Ma-hGx" id="oLa-Xy-aVH"/>
                 <outlet property="sculptImageView" destination="04g-U6-YxV" id="URJ-we-q5S"/>
                 <outlet property="sculptMovesLabelView" destination="AZe-Pm-LXD" id="bUj-QA-QLS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -61,10 +63,28 @@
                         <action selector="flipImageAction:" destination="-1" eventType="touchUpInside" id="Pug-VM-gTq"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdT-A6-bDR">
+                    <rect key="frame" x="70" y="533" width="180" height="30"/>
+                    <state key="normal" title="AddressBook Email Check"/>
+                    <connections>
+                        <action selector="addressBookEmailCheckAction:" destination="-1" eventType="touchUpInside" id="gs2-4X-ayH"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Emails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35z-Ma-hGx">
+                    <rect key="frame" x="208" y="441" width="83" height="39"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="35z-Ma-hGx" secondAttribute="height" multiplier="83:39" id="Etk-Xn-ksC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="qdT-A6-bDR" firstAttribute="top" secondItem="6Kg-eI-iZD" secondAttribute="bottom" constant="37" id="0Fb-Nr-pmG"/>
                 <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="Fb5-MU-HCR" secondAttribute="bottom" constant="58" id="1CW-J1-uQt"/>
+                <constraint firstItem="35z-Ma-hGx" firstAttribute="leading" secondItem="6Kg-eI-iZD" secondAttribute="trailing" constant="12" id="4sQ-Qr-Dwx"/>
                 <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="6Kg-eI-iZD" secondAttribute="bottom" constant="8" symbolic="YES" id="AIc-vu-CL3"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AIy-1q-Cdv"/>
                 <constraint firstItem="Wwh-gF-Zx1" firstAttribute="leading" secondItem="Fb5-MU-HCR" secondAttribute="trailing" constant="27" id="HsV-Mw-P2v"/>
@@ -76,7 +96,10 @@
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="dDo-fp-TJ1"/>
                 <constraint firstItem="AZe-Pm-LXD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e0D-Bh-Koz"/>
                 <constraint firstItem="6Kg-eI-iZD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e5p-R8-fFQ"/>
+                <constraint firstItem="qdT-A6-bDR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="noO-aX-TVk"/>
+                <constraint firstItem="35z-Ma-hGx" firstAttribute="top" secondItem="04g-U6-YxV" secondAttribute="bottom" constant="47" id="qIu-Et-FXQ"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="xf5-cl-FFQ"/>
+                <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="35z-Ma-hGx" secondAttribute="bottom" constant="24" id="zg1-Oq-EtG"/>
             </constraints>
             <point key="canvasLocation" x="73" y="54"/>
         </view>

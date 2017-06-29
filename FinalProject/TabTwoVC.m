@@ -9,6 +9,7 @@
 #import "TabTwoVC.h"
 #import "AppDelegate.h"
 #import "SculptObject+CoreDataClass.h"
+#import <AddressBook/AddressBook.h>
 
 
 @interface TabTwoVC ()
@@ -213,6 +214,25 @@
 }
 
 
+#pragma -mark addressBookEmailCheckAction
+/**
+ Method:
+ -
+ Description:
+- Gets Emails from Addressbook
+ - Sets the emails to the view label
+ 
+ @param sender sender description
+ */
+- (IBAction)addressBookEmailCheckAction:(id)sender {
+    
+    //Fetch & Set Emails from AddressBook
+    [self addressBookFetcher];
+    
+    
+}
+
+
 #pragma  - mark readDataFromFile
 
 /**
@@ -262,5 +282,80 @@
     
 }
 
+
+
+# pragma - mark addressBookFetcher
+/**
+ Method: addressBookFetcher
+ 
+ Description
+ - Gets Contacts from AddressBook
+ - Gets Email addresses
+ */
+- (void)addressBookFetcher {
+    //Error Check for Privaledge
+    if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusDenied || ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusRestricted){
+
+        //Init AlertView
+        UIAlertView *cantAddContactAlert = [[UIAlertView alloc] initWithTitle: @"Cannot get contacts" message: @"You must give the app permission to read the contacts first." delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+        //Present AlertView
+        [cantAddContactAlert show];
+    
+        //Check for Privalege
+    } else if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusAuthorized){
+        
+        //Get Emails
+        [self getEmails];
+    } else {
+
+        ABAddressBookRequestAccessWithCompletion(ABAddressBookCreateWithOptions(NULL, nil), ^(bool granted, CFErrorRef error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (!granted){
+                    //4
+                    UIAlertView *cantAddContactAlert = [[UIAlertView alloc] initWithTitle: @"Cannot get contacts" message: @"You must give the app permission to read the contacts first." delegate:nil cancelButtonTitle: @"OK" otherButtonTitles: nil];
+                    [cantAddContactAlert show];
+                    return;
+                }
+
+                [self getEmails];
+                
+            });
+        });
+    }
+}
+
+
+
+#pragma -mark getEmails
+/**
+ Method: getEmails
+ Description:
+ - Helper Method
+ - Gets all the emails from the addressBook
+
+ @return emails Emails from AddressBook
+ */
+-(NSArray *)getEmails
+{
+    NSMutableArray *emails = [NSMutableArray array];
+    ABAddressBookRef addressBookRef = ABAddressBookCreateWithOptions(NULL, nil);
+    NSArray *allContacts = (__bridge NSArray *)ABAddressBookCopyArrayOfAllPeople(addressBookRef);
+    for (id record in allContacts)
+    {
+        ABRecordRef person = (__bridge ABRecordRef)record;
+        ABMultiValueRef emailProperty = ABRecordCopyValue(person, kABPersonEmailProperty) ;
+        NSArray *personEmails = (__bridge_transfer NSArray *)ABMultiValueCopyArrayOfAllValues(emailProperty);
+        [emails addObjectsFromArray:personEmails];
+        CFRelease(person);
+        CFRelease(emailProperty);
+    }
+    CFRelease(addressBookRef) ;
+    for (NSString *email in emails)
+    {
+        _emailView.text = email;
+    }
+    
+    return emails;
+}
 
 @end

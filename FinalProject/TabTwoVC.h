@@ -18,6 +18,7 @@
 
 @property (strong, nonatomic) UIImage *sculptUIImage;
 
+@property (strong, nonatomic) IBOutlet UILabel *emailView;
 
 /*Actions*/
 
@@ -28,6 +29,9 @@
 - (IBAction)shareEmailAction:(id)sender;
 
 - (IBAction)scheduleSculptTimeAction:(id)sender;
+
+- (IBAction)addressBookEmailCheckAction:(id)sender;
+
 
 /*Methods*/
 
