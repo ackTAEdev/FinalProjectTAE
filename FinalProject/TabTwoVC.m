@@ -10,7 +10,7 @@
 #import "AppDelegate.h"
 #import "SculptObject+CoreDataClass.h"
 #import <AddressBook/AddressBook.h>
-
+#import <EventKit/EventKit.h>
 
 @interface TabTwoVC ()
 
@@ -209,6 +209,33 @@
 
 - (IBAction)scheduleSculptTimeAction:(id)sender {
     
+    //Init EventStore Item
+    EKEventStore *store = [EKEventStore new];
+    
+    //Request Access To Entity
+    [store requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
+        //Error Checking
+        if (!granted) { return; }
+        
+        //Init EKEvent Item
+        EKEvent *event = [EKEvent eventWithEventStore:store];
+        
+        //Set Title
+        event.title = @"Event Title";
+        //Set StartDate
+        event.startDate = [NSDate date]; //today
+        //Set EndDate
+        event.endDate = [event.startDate dateByAddingTimeInterval:60*60];  //set 1 hour meeting
+        //Set Calender
+        event.calendar = [store defaultCalendarForNewEvents];
+        
+        //Error Checking
+        NSError *err = nil;
+        
+        //Save Event into the EventStore
+        [store saveEvent:event span:EKSpanThisEvent commit:YES error:&err];
+        
+    }];//End of Block
     
 }
 

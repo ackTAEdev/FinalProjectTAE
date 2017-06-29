@@ -25,6 +25,9 @@
 		DF51A0F01F03C3BC00D091FC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0EF1F03C3BC00D091FC /* GLKit.framework */; };
 		DF51A0F21F03C3C200D091FC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0F11F03C3C200D091FC /* OpenGLES.framework */; };
 		DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */; };
+		DF89F9811F0539E700775D57 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9801F0539E700775D57 /* EventKit.framework */; };
+		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
+		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
 		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +70,9 @@
 		DF51A0F11F03C3C200D091FC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SculptGLKVC.h; sourceTree = "<group>"; };
 		DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SculptGLKVC.m; sourceTree = "<group>"; };
+		DF89F9801F0539E700775D57 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		DF89F9821F0539ED00775D57 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +81,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */,
+				DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */,
+				DF89F9811F0539E700775D57 /* EventKit.framework in Frameworks */,
 				DF4EB25C1F0521490021E04F /* AddressBook.framework in Frameworks */,
 				DF0A4C6E1F03FCD200520A2F /* Social.framework in Frameworks */,
 				DF0A4C6C1F03FCCC00520A2F /* UIKit.framework in Frameworks */,
@@ -214,6 +223,9 @@
 		DF51A0EE1F03C3BC00D091FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF89F9841F0539FB00775D57 /* AddressBookUI.framework */,
+				DF89F9821F0539ED00775D57 /* EventKitUI.framework */,
+				DF89F9801F0539E700775D57 /* EventKit.framework */,
 				DF4EB25B1F0521490021E04F /* AddressBook.framework */,
 				DF0A4C6F1F03FF8200520A2F /* Accounts.framework */,
 				DF0A4C6D1F03FCD200520A2F /* Social.framework */,
