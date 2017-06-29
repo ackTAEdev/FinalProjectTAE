@@ -10,4 +10,28 @@
 
 @interface WikipediaManager : NSObject
 
+/*Fields*/
+
+//OpenGL Number
+@property float number;
+
+//Singleton Array 
+@property (readonly, nonatomic) NSMutableArray *data;
+
+
+/*Methods*/
+
+//Singleton Method
++(instancetype)sharedManager;
+
+
+//Fetch Data from Wikipedia
+-(float)fetchDataFromSite:(NSString*) websiteName;
+
+//Helper Method to fetchDataFromSite
+-(float)parseFetchedDataOpenGL:(NSDictionary*) dict;
+
+//Helper Method to parseFetchedDataOpenGL
+-(float)numberFromString: (NSString*) passedString;
+
 @end

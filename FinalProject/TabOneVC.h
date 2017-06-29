@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SculptGLKVC.h"
+#import "WikipediaManager.h"
+
 
 @interface TabOneVC : UIViewController 
 
@@ -20,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *openGLVersionLabel;
 
 @property (nonatomic)  float openGLVersionNumber;
+
+@property (strong, nonatomic)  WikipediaManager wikiManager;
 
 
 

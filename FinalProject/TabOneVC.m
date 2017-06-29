@@ -59,58 +59,6 @@
 */
 
 
-#pragma - mark fetchDataFromSite
-/**
- Method: fetchDataFromSite
- 
- Description
- - Helper Method
- - Fetches Data from a Website
- - Returns data
- 
- @param websiteName Site to Fetch
- @return return value DataFeteched
- */
--(void)fetchDataFromSite:(NSString*) websiteName {
-    
-    //Init NSURL Session
-    NSURLSession *session = [NSURLSession sharedSession];
-    
-    //Init URL
-    NSURL *url = [NSURL URLWithString:websiteName];
-    
-    //Error Checking
-    id completionBlock = ^(NSData *data, NSURLResponse *response, NSError *error) {
-        
-        if(error){
-            //Return Log
-            NSLog(@"Error: %@", error.localizedDescription);
-        }
-        
-        NSError *jsonError = nil;
-        
-        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&jsonError];
-        
-        if (jsonError) {
-            NSLog(@"Parsing Error: %@", jsonError.localizedDescription);
-        }
-        else {
-            
-            //Parse Data
-            [self parseFetchedDataOpenGL:dictionary];
-            
-        }//End of Else Blcok
-        
-    };//End of Block
-    
-    //Init Data Task
-    NSURLSessionTask *dataTask = [session dataTaskWithURL:url completionHandler:completionBlock];
-    
-    //Start dataTask
-    [dataTask resume];
-    
-}
-
 #pragma  - mark setupWebServiceWikipediaOpenGLVersion
 /**
  
@@ -121,15 +69,14 @@
  */
 -(void)setupWebServiceWikipediaOpenGLVersion{
     
-    //TODO: Make Asynchronous Call
-    
     //Init URL with OpenGL using mediaWiki API
     NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0";
     
-    //Init DataTask by Fetching Data
-    [self fetchDataFromSite:urlWikiOpenGL];
+    //Init Wikipedia Manager with Singleton Class
+    _wikiManager = [WikipediaManager sharedManager];
     
-   
+    //Init DataTask by Fetching Data
+    _openGLVersionNumber = [_wikiManager fetchDataFromSite:urlWikiOpenGL];
     
     //Store Data into CoreData
     [self saveDataToCoreData];
@@ -208,104 +155,8 @@
     SculptObject *newSculptObject = [[SculptObject alloc] initWithContext:context];
     
     //4. Set the values
-    //[newSculptObject setSculptMoves:_openGLVersionNumber];
+    [newSculptObject setSculptMoves:_openGLVersionNumber];
 }
 
-
-#pragma  - mark parseFetchedDataOpenGL
-/** TODO
- Method:parseFetchedDataOpenGL
- 
- 
- Description
- - Helper Method
- - Parse Data Task
- - Perform JSON Dictionary Key Value Searching
- - Perform String Parsing
- - Identitfy OpenGL Version
- 
- - Help:  https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0
- 
- @param dict FetchedData
- @return  OpenGL Version
- */
--(float)parseFetchedDataOpenGL:(NSDictionary*) dict{
-    
-    //Init & Set ParseArrayNo_1
-    NSMutableArray *parseArrayNo_1 = [dict valueForKey:@"query.pages.22497.revisions"];
-
-    //Int & Set  Dict
-    NSDictionary *tempDict = parseArrayNo_1[0];
-    
-    //Init & Set Another Array
-    NSString *string = [tempDict valueForKey:@"*"];
-    
-    //Init Another Parse Array
-    NSArray *parseArrayNo_2 = [string componentsSeparatedByString:@"\n"];
-    
-    //Init NSString
-    NSString *matchedString = [[NSString alloc] init];
-    
-    //Init Searched String
-    NSString *searchString = @"latest release version";
-    
-    //Search Array for String Match
-    for (int i = 0; i < parseArrayNo_2.count; i++) {
-        
-        //Check if String Matches Intended String
-        if(parseArrayNo_2[i] == searchString) {
-            
-            //Assign Value to MatchString
-            matchedString =  parseArrayNo_2[i];
-            
-        }//End of If Loop
-    }//End of For Loop
-
-    //Parse Number from the String
-    float number = [self numberFromString:matchedString];
-    
-    //Assign Number to Field
-    _openGLVersionNumber = number;
-    
-    //Return the number
-    return number;
-
-}
-
-
-
-/**
- Method:numberFromString
- 
- Description:
- - Helper Method
- - Parses string to find a number
- 
- @param passedString <#passedString description#>
- @return <#return value description#>
- */
--(float)numberFromString: (NSString*) passedString{
-    
-    //Init NSString
-    NSString *numberString;
-    
-    //Init Scanner
-    NSScanner *scanner = [NSScanner scannerWithString:passedString];
-    
-    //Init CharacterSet
-    NSCharacterSet *numbers = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
-    
-    // Throw away characters before the first number.
-    [scanner scanUpToCharactersFromSet:numbers intoString:NULL];
-    
-    // Collect numbers.
-    [scanner scanCharactersFromSet:numbers intoString:&numberString];
-    
-    // Get Result
-    float number = [numberString floatValue];
-    
-    //Return Number
-    return number;
-}
 
 @end
