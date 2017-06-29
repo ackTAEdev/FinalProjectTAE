@@ -24,6 +24,7 @@
 		DF51A0F01F03C3BC00D091FC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0EF1F03C3BC00D091FC /* GLKit.framework */; };
 		DF51A0F21F03C3C200D091FC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0F11F03C3C200D091FC /* OpenGLES.framework */; };
 		DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */; };
+		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DF51A0F11F03C3C200D091FC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SculptGLKVC.h; sourceTree = "<group>"; };
 		DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SculptGLKVC.m; sourceTree = "<group>"; };
+		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		DF51A0B21F03A37800D091FC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DFC762241F04F26400F7BA24 /* Settings.bundle */,
 				DF51A0C61F03A37800D091FC /* Info.plist */,
 				DF51A0C11F03A37800D091FC /* Assets.xcassets */,
 				DF51A0B31F03A37800D091FC /* main.m */,
@@ -304,6 +307,7 @@
 				DF51A0C21F03A37800D091FC /* Assets.xcassets in Resources */,
 				DF51A0BD1F03A37800D091FC /* Main.storyboard in Resources */,
 				DF51A0E61F03AADA00D091FC /* TabTwoVC.xib in Resources */,
+				DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */,
 				DF51A0E11F03AAC100D091FC /* TabOneVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

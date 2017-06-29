@@ -95,6 +95,25 @@
 
 
 /**
+ Method: flipImageAction
+ 
+ Description
+ - Flips image
+ - Implements new iOS 9 UIImage method
+ - This is to view the image from a nmirrored angle for creative assessment of artistic merit.
+
+
+ @param sender sender description
+ */
+- (IBAction)flipImageAction:(id)sender {
+    
+    //Flips Image
+    [_sculptUIImage imageFlippedForRightToLeftLayoutDirection];
+    
+}
+
+
+/**
  Method: shareFacebookAction
  
  Description
@@ -103,7 +122,6 @@
  @param sender
  */
 #pragma  - mark shareFacebookAction
-
 - (IBAction)shareFacebookAction:(id)sender {
 
     //Check if Facebook is ready to post information

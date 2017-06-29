@@ -21,6 +21,8 @@
 
 /*Actions*/
 
+- (IBAction)flipImageAction:(id)sender;
+
 - (IBAction)shareFacebookAction:(id)sender;
 
 - (IBAction)shareEmailAction:(id)sender;

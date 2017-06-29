@@ -18,6 +18,9 @@
 //Float to hold number of sculpts moves made
 @property (nonatomic) float sculptMovesCount;
 
+
+@property  GLKView *glkView;
+
 /*Methods*/
 
 //Helper Method to store sculptMoveCount

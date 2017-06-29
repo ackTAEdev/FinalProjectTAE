@@ -49,15 +49,23 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Sculpt No Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Pm-LXD">
-                    <rect key="frame" x="76.5" y="6" width="167" height="21"/>
+                    <rect key="frame" x="77" y="6" width="167" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-eI-iZD">
+                    <rect key="frame" x="125" y="466" width="71" height="30"/>
+                    <state key="normal" title="Flip Image"/>
+                    <connections>
+                        <action selector="flipImageAction:" destination="-1" eventType="touchUpInside" id="Pug-VM-gTq"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="Fb5-MU-HCR" secondAttribute="bottom" constant="58" id="1CW-J1-uQt"/>
+                <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="6Kg-eI-iZD" secondAttribute="bottom" constant="8" symbolic="YES" id="AIc-vu-CL3"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AIy-1q-Cdv"/>
                 <constraint firstItem="Wwh-gF-Zx1" firstAttribute="leading" secondItem="Fb5-MU-HCR" secondAttribute="trailing" constant="27" id="HsV-Mw-P2v"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="top" secondItem="04g-U6-YxV" secondAttribute="bottom" constant="22" id="Hwj-uo-JwQ"/>
@@ -67,6 +75,7 @@
                 <constraint firstItem="04g-U6-YxV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="aZE-AQ-hXy"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="34" id="dDo-fp-TJ1"/>
                 <constraint firstItem="AZe-Pm-LXD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e0D-Bh-Koz"/>
+                <constraint firstItem="6Kg-eI-iZD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e5p-R8-fFQ"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="xf5-cl-FFQ"/>
             </constraints>
             <point key="canvasLocation" x="73" y="54"/>

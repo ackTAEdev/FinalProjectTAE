@@ -82,11 +82,16 @@
 
 - (UIImage*)takeScreenShotofSculpt {
     
-    //Init UIImage
-    UIImage *screenShotSculpt = [[UIImage alloc] initWithData:<#(nonnull NSData *)#> ];
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *imageScreenShot = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
     
     //Return UIIMage
-    return screenShotSculpt;
+    return imageScreenShot;
     
 }
 
