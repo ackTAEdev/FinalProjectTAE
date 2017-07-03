@@ -67,7 +67,13 @@
  - Store, & Fetch OpenGLVersion from CoreData
  - Assign Label Values
  */
--(void)setupWebServiceWikipediaOpenGLVersion{
+-(bool)setupWebServiceWikipediaOpenGLVersion{
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
     
     //Init URL with OpenGL using mediaWiki API
     NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0";
@@ -83,7 +89,15 @@
     
     //Fetch Data from CoreData
     [self fetchDataFromCoreData];
-    
+        
+        //Return True if Successful
+        return true;
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
 }
 
 /**
@@ -96,7 +110,13 @@
  */
 #pragma  - mark fetchDataFromCoreData
 
--(void)fetchDataFromCoreData{
+-(bool)fetchDataFromCoreData{
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
     
     //1. Get a refernecne to the app delegate
     AppDelegate *appD = (AppDelegate *) [[UIApplication sharedApplication]delegate];
@@ -132,6 +152,17 @@
         //8. Assign value to the text
         _openGLVersionLabel.text = string;
     }//End of If Loop
+        
+        //Return True if Successful
+        return true;
+        
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
+    
 }
 
 # pragma mark - saveDataToCoreData
@@ -142,7 +173,15 @@
  - Save OpenGLVersion to the CoreData
  
  */
--(void)saveDataToCoreData{
+-(bool)saveDataToCoreData{
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
+
+    
     
     //TODO Tasks to Store Data into CoreData
     //1. Get a reference the app delegate
@@ -156,6 +195,16 @@
     
     //4. Set the values
     [newSculptObject setSculptMoves:_openGLVersionNumber];
+        
+        //Return True if Successful
+        return true;
+        
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
 }
 
 

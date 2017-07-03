@@ -44,7 +44,13 @@
  */
 #pragma  - mark fetchDataFromCoreData
 
--(void)fetchDataFromCoreData{
+-(bool)fetchDataFromCoreData{
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
     
     //1. Get a refernecne to the app delegate
     AppDelegate *appD = (AppDelegate *) [[UIApplication sharedApplication]delegate];
@@ -80,6 +86,16 @@
         //8. Assign value to the text
         self.sculptMovesLabelView.text = string;
     }//End of If Loop
+        
+        //Return True if Successful
+        return true;
+        
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
 }
 
 /*
@@ -93,6 +109,7 @@
 */
 
 
+#pragma  - mark flipImageAction
 
 /**
  Method: flipImageAction
@@ -103,7 +120,7 @@
  - This is to view the image from a nmirrored angle for creative assessment of artistic merit.
 
 
- @param sender sender description
+ @param sender description
  */
 - (IBAction)flipImageAction:(id)sender {
     
@@ -170,6 +187,31 @@
 }
 
 
+-(bool)saveImageToFile{
+    
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
+        
+        //TODO: SAVE IMAGE TO FILE
+        
+        
+        //Return True if Successful
+        return true;
+        
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
+
+        
+}
+
 
 /**
  Description
@@ -179,9 +221,15 @@
 
  @param activities activities Mail Actvity
  */
-#pragma  - mark launchWithActivities
+#pragma - mark launchWithActivities
 
--(void)launchWithActivities:(nullable NSArray *) activities {
+-(bool)launchWithActivities:(nullable NSArray *) activities {
+    
+    //Init Test Flag
+    int testFlag = 1;
+    
+    //Flag Util for Err Checking
+    if(testFlag == 1){
     
     //Create String to be Posted in Email
     NSString *postText = @"I've just created a Sculpt!";
@@ -194,6 +242,16 @@
     
     //Set the Activitiy View Controller
     [self presentViewController:actVC animated:YES completion:nil];
+        
+        //Return True if Successful
+        return true;
+        
+    }//End of If Block
+    else {
+        
+        //Return False if program end
+        return false;
+    }//End of Else Block
     
 }
 

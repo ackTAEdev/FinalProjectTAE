@@ -23,10 +23,16 @@
 
 @property (nonatomic)  float openGLVersionNumber;
 
-@property (strong, nonatomic)  WikipediaManager wikiManager;
+@property (strong, nonatomic)  WikipediaManager *wikiManager;
 
 
+/*Methods*/
 
+-(bool)setupWebServiceWikipediaOpenGLVersion;
+
+-(bool)fetchDataFromCoreData;
+
+-(bool)saveDataToCoreData;
 
 
 @end

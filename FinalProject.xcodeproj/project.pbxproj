@@ -16,7 +16,6 @@
 		DF51A0C01F03A37800D091FC /* FinalProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0BE1F03A37800D091FC /* FinalProject.xcdatamodeld */; };
 		DF51A0C21F03A37800D091FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF51A0C11F03A37800D091FC /* Assets.xcassets */; };
 		DF51A0C51F03A37800D091FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF51A0C31F03A37800D091FC /* LaunchScreen.storyboard */; };
-		DF51A0D01F03A37900D091FC /* FinalProjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0CF1F03A37900D091FC /* FinalProjectTests.m */; };
 		DF51A0E01F03AAC100D091FC /* TabOneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0DE1F03AAC100D091FC /* TabOneVC.m */; };
 		DF51A0E11F03AAC100D091FC /* TabOneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF51A0DF1F03AAC100D091FC /* TabOneVC.xib */; };
 		DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0E31F03AADA00D091FC /* TabTwoVC.m */; };
@@ -29,7 +28,10 @@
 		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
 		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
 		DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF89F9871F053EA100775D57 /* WikipediaManager.m */; };
+		DFA023811F0A523D00EE7844 /* WikipediaManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */; };
 		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
+		DFD811761F0A4ADC003A42CA /* TabOneVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */; };
+		DFD811781F0A4E34003A42CA /* TabTwoVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD811771F0A4E34003A42CA /* TabTwoVCTest.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +59,6 @@
 		DF51A0C41F03A37800D091FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF51A0C61F03A37800D091FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF51A0CB1F03A37800D091FC /* FinalProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF51A0CF1F03A37900D091FC /* FinalProjectTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinalProjectTests.m; sourceTree = "<group>"; };
 		DF51A0D11F03A37900D091FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF51A0DD1F03AAC100D091FC /* TabOneVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabOneVC.h; sourceTree = "<group>"; };
 		DF51A0DE1F03AAC100D091FC /* TabOneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabOneVC.m; sourceTree = "<group>"; };
@@ -76,7 +77,10 @@
 		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		DF89F9861F053EA100775D57 /* WikipediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaManager.h; sourceTree = "<group>"; };
 		DF89F9871F053EA100775D57 /* WikipediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManager.m; sourceTree = "<group>"; };
+		DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManagerTest.m; sourceTree = "<group>"; };
 		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabOneVCTest.m; path = ../TabOneVCTest.m; sourceTree = "<group>"; };
+		DFD811771F0A4E34003A42CA /* TabTwoVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabTwoVCTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +153,9 @@
 		DF51A0CE1F03A37800D091FC /* FinalProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF51A0CF1F03A37900D091FC /* FinalProjectTests.m */,
+				DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */,
+				DFD811771F0A4E34003A42CA /* TabTwoVCTest.m */,
+				DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */,
 				DF51A0D11F03A37900D091FC /* Info.plist */,
 			);
 			path = FinalProjectTests;
@@ -362,7 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF51A0D01F03A37900D091FC /* FinalProjectTests.m in Sources */,
+				DFD811761F0A4ADC003A42CA /* TabOneVCTest.m in Sources */,
+				DFD811781F0A4E34003A42CA /* TabTwoVCTest.m in Sources */,
+				DFA023811F0A523D00EE7844 /* WikipediaManagerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

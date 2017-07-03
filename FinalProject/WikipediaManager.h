@@ -24,6 +24,11 @@
 //Singleton Method
 +(instancetype)sharedManager;
 
++(instancetype)allocWithZone:(struct _NSZone *)zone;
+
+-(instancetype)initPrivate;
+
+- (id)copyWithZone:(NSZone *)zone;
 
 //Fetch Data from Wikipedia
 -(float)fetchDataFromSite:(NSString*) websiteName;

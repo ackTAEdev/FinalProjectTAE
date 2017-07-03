@@ -35,6 +35,8 @@
 
 /*Methods*/
 
--(void)saveImageToFile;
+-(bool)fetchDataFromCoreData;
+
+-(bool)launchWithActivities:(nullable NSArray *) activities;
 
 @end
