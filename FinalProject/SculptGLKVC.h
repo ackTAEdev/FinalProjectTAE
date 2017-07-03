@@ -18,14 +18,16 @@
 //Float to hold number of sculpts moves made
 @property (nonatomic) float sculptMovesCount;
 
-
+//Init of GLKView
 @property  GLKView *glkView;
 
 /*Methods*/
 
+//ViewDidLoad
+-(void)viewDidLoad;
+
 //Helper Method to store sculptMoveCount
 -(void)sculptMoveCounter;
-
 
 //Helper Method to save Data
 -(void)saveDataToCoreData;
