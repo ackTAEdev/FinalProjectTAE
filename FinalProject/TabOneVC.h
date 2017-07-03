@@ -15,9 +15,11 @@
 
 /*Outlets*/
 
-@property (strong, nonatomic) IBOutlet UILabel *appNameLabelView;
+@property (strong, nonatomic) IBOutlet GLKView *glkView;
 
-@property (strong, nonatomic) IBOutlet SculptGLKVC *glkView;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *appNameLabelView;
 
 @property (strong, nonatomic) IBOutlet UILabel *openGLVersionLabel;
 

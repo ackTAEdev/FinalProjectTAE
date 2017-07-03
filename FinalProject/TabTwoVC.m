@@ -61,29 +61,23 @@
     //3. Create fetch request the Contact entity
     NSFetchRequest *fetch = [SculptObject fetchRequest];
 
-    //4. Create a predicate for the search
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"sculptMoves"];
-    
-    //5. Set the predicate the search
-    [fetch setPredicate:predicate];
-    
-    //6. Fetch the items
+    //4. Fetch the items
     NSError *error = nil;
     NSArray *objects = [context executeFetchRequest:fetch error:&error];
 
-    //7a. Set the message if no items are found
+    //5a. Set the message if no items are found
     if ([objects count] ==0) {
         self.sculptMovesLabelView.text = @"No matches found";
     } else {
         
-        //7b. Create a mutable string with the details of the contacts found
+        //5b. Create a mutable string with the details of the contacts found
         NSMutableString *string = [NSMutableString string];
         
         for (SculptObject *foundObject in objects) {
             [string appendFormat:@"SculptMoves: %f", foundObject.sculptMoves];
         }//End of For Loop
         
-        //8. Assign value to the text
+        //6. Assign value to the text
         self.sculptMovesLabelView.text = string;
     }//End of If Loop
         

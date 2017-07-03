@@ -23,6 +23,8 @@
 
 /*Methods*/
 
+-(instancetype)initWithGLKView: (GLKView*) glkViewParam;
+
 //ViewDidLoad
 -(void)viewDidLoad;
 

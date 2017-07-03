@@ -8,6 +8,7 @@
 
 #import "TabOneVC.h"
 #import "AppDelegate.h"
+#import "SculptGLKVC.h"
 #import "SculptObject+CoreDataClass.h"
 
 @interface TabOneVC ()
@@ -27,8 +28,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //Set viewDidLoad of glkView
-    [_glkView viewDidLoad];
+    //Init SculptGLKVC
+    SculptGLKVC *sculptGLKVCObj = [[SculptGLKVC alloc] initWithGLKView:_glkView];
+    
+    //Call glkView
+    [sculptGLKVCObj viewDidLoad];
     
     //Fetch, Parse, Store, Retrieve & Set OpenGLVersion
     [self setupWebServiceWikipediaOpenGLVersion];
@@ -76,7 +80,7 @@
     if(testFlag == 1){
     
     //Init URL with OpenGL using mediaWiki API
-    NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=jsonfm&titles=OpenGL&rvsection=0";
+    NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=OpenGL&rvsection=0";
     
     //Init Wikipedia Manager with Singleton Class
     _wikiManager = [WikipediaManager sharedManager];
@@ -126,12 +130,6 @@
     
     //3. Create fetch request the Contact entity
     NSFetchRequest *fetch = [SculptObject fetchRequest];
-    
-    //4. Create a predicate for the search
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"OpenGLVersion"];
-    
-    //5. Set the predicate the search
-    [fetch setPredicate:predicate];
     
     //6. Fetch the items
     NSError *error = nil;

@@ -13,6 +13,18 @@
 @implementation SculptGLKVC
 
 
+-(instancetype)initWithGLKView: (GLKView*)glkViewParam {
+    
+    self = [super init];
+    
+    if(self) {
+        //Init With GLKView
+        _glkView = glkViewParam;
+    }
+    
+    return self;
+}
+
 #pragma -mark viewDidLoad
 /**
  Method: viewDidLoad
