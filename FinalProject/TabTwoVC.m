@@ -187,32 +187,6 @@
 }
 
 
--(bool)saveImageToFile{
-    
-    
-    //Init Test Flag
-    int testFlag = 1;
-    
-    //Flag Util for Err Checking
-    if(testFlag == 1){
-        
-        //TODO: SAVE IMAGE TO FILE
-        
-        
-        //Return True if Successful
-        return true;
-        
-    }//End of If Block
-    else {
-        
-        //Return False if program end
-        return false;
-    }//End of Else Block
-
-        
-}
-
-
 /**
  Description
  - Helper method to init activity view controller
