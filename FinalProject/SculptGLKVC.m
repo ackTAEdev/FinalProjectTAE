@@ -25,6 +25,44 @@
     return self;
 }
 
+
+#pragma -mark touchesMoved
+/**
+ Method: touchesMoved
+ - Sculpts Model
+ 
+ Description
+ - Moves Cursor
+
+ @param touches <#touches description#>
+ @param event <#event description#>
+ */
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    //Init Touch Point
+    CGPoint touch_point = [[touches anyObject] locationInView:self.view];
+    
+    //Assign
+    touch_point = CGPointMake(touch_point.x, 480-touch_point.y); //Or you can put touch_point.y = 480-touch_point.y
+    
+    //PassTouchPointToSculpt
+    [self sculptTouchAtPoint:touch_point.x :touch_point.y];
+    
+}
+
+- (void) sculptTouchAtPoint:(float )xcord :(float) ycord
+{
+  
+    //OpenGL Sculpt Setup
+    
+    //Transform delta to coordinate on model
+    
+        //Line Tracing
+    
+    
+    
+}
+
 #pragma -mark viewDidLoad
 /**
  Method: viewDidLoad

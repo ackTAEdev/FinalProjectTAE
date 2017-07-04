@@ -28,6 +28,13 @@
 //ViewDidLoad
 -(void)viewDidLoad;
 
+//UI Touch Methods
+-(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event;
+
+//Sculpting Method
+- (void) sculptTouchAtPoint:(float )xcord :(float) ycord
+
+
 //Helper Method to store sculptMoveCount
 -(void)sculptMoveCounter;
 
