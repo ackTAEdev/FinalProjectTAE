@@ -45,14 +45,8 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="04g-U6-YxV">
-                    <rect key="frame" x="22" y="35" width="276" height="359"/>
+                    <rect key="frame" x="22" y="46" width="276" height="348"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Sculpt No Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Pm-LXD">
-                    <rect key="frame" x="77" y="6" width="167" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kg-eI-iZD">
                     <rect key="frame" x="125" y="466" width="71" height="30"/>
                     <state key="normal" title="Flip Image"/>
@@ -76,6 +70,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Sculpt No Moves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZe-Pm-LXD">
+                    <rect key="frame" x="77" y="20" width="167" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -86,7 +86,7 @@
                 <constraint firstItem="04g-U6-YxV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="AIy-1q-Cdv"/>
                 <constraint firstItem="Wwh-gF-Zx1" firstAttribute="leading" secondItem="Fb5-MU-HCR" secondAttribute="trailing" constant="27" id="HsV-Mw-P2v"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="top" secondItem="04g-U6-YxV" secondAttribute="bottom" constant="22" id="Hwj-uo-JwQ"/>
-                <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="AZe-Pm-LXD" secondAttribute="bottom" constant="8" symbolic="YES" id="PMD-4n-9pS"/>
+                <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="AZe-Pm-LXD" secondAttribute="bottom" constant="5" id="PMD-4n-9pS"/>
                 <constraint firstItem="nux-VH-prL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Rd6-1Y-y53"/>
                 <constraint firstItem="Fb5-MU-HCR" firstAttribute="baseline" secondItem="Wwh-gF-Zx1" secondAttribute="baseline" id="aUS-XR-rGw"/>
                 <constraint firstItem="04g-U6-YxV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="22" id="aZE-AQ-hXy"/>
@@ -96,10 +96,10 @@
                 <constraint firstItem="6Kg-eI-iZD" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e5p-R8-fFQ"/>
                 <constraint firstItem="qdT-A6-bDR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="noO-aX-TVk"/>
                 <constraint firstItem="35z-Ma-hGx" firstAttribute="top" secondItem="04g-U6-YxV" secondAttribute="bottom" constant="47" id="qIu-Et-FXQ"/>
-                <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="xf5-cl-FFQ"/>
+                <constraint firstItem="04g-U6-YxV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="46" id="xf5-cl-FFQ"/>
                 <constraint firstItem="nux-VH-prL" firstAttribute="top" secondItem="35z-Ma-hGx" secondAttribute="bottom" constant="24" id="zg1-Oq-EtG"/>
             </constraints>
-            <point key="canvasLocation" x="73" y="54"/>
+            <point key="canvasLocation" x="71" y="55"/>
         </view>
     </objects>
 </document>

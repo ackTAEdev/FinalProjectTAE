@@ -37,7 +37,7 @@
     
     //Given
     WikipediaManager *wikipediaManagerObj = [[WikipediaManager alloc] init];
-    NSString *urlString = @"TODO";
+    NSString *urlString = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=OpenGL&rvsection=0";
     float floatAssert = 4;
     
     [self measureBlock:^{
