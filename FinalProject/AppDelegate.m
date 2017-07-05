@@ -45,6 +45,10 @@
     TabOneVC *tabOneVCObj = [[TabOneVC alloc] init ];
     // Construct TabTwoVC
     TabTwoVC *tabTwoVCObj = [[TabTwoVC alloc] init ];
+    
+    //Init & Assign Tab Bar Icons
+    tabTwoVCObj.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Review" image:nil tag:0];
+    tabOneVCObj.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Sculpt" image:nil tag:0];
 
     /*Init Tab Bar Controllers to embedeed the View Controllers*/
     // Construct TabBarRootVC Object

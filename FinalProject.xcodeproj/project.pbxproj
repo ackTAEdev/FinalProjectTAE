@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DF0A4C6C1F03FCCC00520A2F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0A4C6B1F03FCCC00520A2F /* UIKit.framework */; };
 		DF0A4C6E1F03FCD200520A2F /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0A4C6D1F03FCD200520A2F /* Social.framework */; };
+		DF4DD99A1F0D3D6500B1F86C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF4DD9991F0D3D6500B1F86C /* Launch Screen.storyboard */; };
 		DF4EB25C1F0521490021E04F /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF4EB25B1F0521490021E04F /* AddressBook.framework */; };
 		DF51A0B41F03A37800D091FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0B31F03A37800D091FC /* main.m */; };
 		DF51A0B71F03A37800D091FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0B61F03A37800D091FC /* AppDelegate.m */; };
@@ -46,6 +47,7 @@
 		DF0A4C6B1F03FCCC00520A2F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DF0A4C6D1F03FCD200520A2F /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		DF0A4C6F1F03FF8200520A2F /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		DF4DD9991F0D3D6500B1F86C /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "../Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DF4EB25B1F0521490021E04F /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		DF51A0AF1F03A37800D091FC /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF51A0B31F03A37800D091FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				DFC762241F04F26400F7BA24 /* Settings.bundle */,
 				DF51A0C61F03A37800D091FC /* Info.plist */,
+				DF4DD9991F0D3D6500B1F86C /* Launch Screen.storyboard */,
 				DF51A0C11F03A37800D091FC /* Assets.xcassets */,
 				DF51A0B31F03A37800D091FC /* main.m */,
 			);
@@ -327,6 +330,7 @@
 				DF51A0C21F03A37800D091FC /* Assets.xcassets in Resources */,
 				DF51A0E61F03AADA00D091FC /* TabTwoVC.xib in Resources */,
 				DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */,
+				DF4DD99A1F0D3D6500B1F86C /* Launch Screen.storyboard in Resources */,
 				DF51A0E11F03AAC100D091FC /* TabOneVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
