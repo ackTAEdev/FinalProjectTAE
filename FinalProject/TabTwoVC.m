@@ -27,6 +27,12 @@
     //Read Image from File to load into UI View
     [self setupPreviewSculptImage];
     
+    //Init edges
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //Init edge behavours
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning {

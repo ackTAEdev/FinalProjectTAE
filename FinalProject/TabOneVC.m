@@ -36,6 +36,13 @@
     
     //Fetch, Parse, Store, Retrieve & Set OpenGLVersion
     [self setupWebServiceWikipediaOpenGLVersion];
+    
+    //Init edges
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //Init edge behavours
+    self.extendedLayoutIncludesOpaqueBars = NO;
+    
 }
 
 
