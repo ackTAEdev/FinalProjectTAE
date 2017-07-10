@@ -9,7 +9,6 @@
 #ifndef FinalProject_Bridging_Header_h
 #define FinalProject_Bridging_Header_h
 
-#import TabBarRootVC.swift
 
 
 #endif /* FinalProject_Bridging_Header_h */

@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-//
 
-class  TabBarRootVC: UIViewController{
+@objc class  TabBarRootVC: UITabBarController{
     
     override func viewDidLoad() {
         

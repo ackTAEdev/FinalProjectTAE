@@ -86,7 +86,7 @@
     //Flag Util for Err Checking
     if(testFlag == 1){
     
-    //Init URL with OpenGL using mediaWiki API
+    //Init URL  with OpenGL using mediaWiki API
     NSString *urlWikiOpenGL = @"https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=content&format=json&titles=OpenGL&rvsection=0";
     
     //Init Wikipedia Manager with Singleton Class
