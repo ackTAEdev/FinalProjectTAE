@@ -9,23 +9,12 @@
 #import "SculptGLKVC.h"
 #import "AppDelegate.h"
 #import "SculptObject+CoreDataClass.h"
-
-@implementation SculptGLKVC
-
-
--(instancetype)initWithGLKView: (GLKView*)glkViewParam {
+@interface GLKView(Touch)
+@end
+@implementation GLKView(Touch)
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
-    self = [super init];
-    
-    if(self) {
-        //Init With GLKView
-        _glkView = glkViewParam;
-    }
-    
-    return self;
 }
-
-
 #pragma -mark touchesMoved
 /**
  Method: touchesMoved
@@ -33,14 +22,14 @@
  
  Description
  - Moves Cursor
-
+ 
  @param touches <#touches description#>
  @param event <#event description#>
  */
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     //Init Touch Point
-    CGPoint touch_point = [[touches anyObject] locationInView:self.view];
+    CGPoint touch_point = [[touches anyObject] locationInView:self];
     
     //Assign
     touch_point = CGPointMake(touch_point.x, 480-touch_point.y); //Or you can put touch_point.y = 480-touch_point.y
@@ -52,16 +41,36 @@
 
 - (void) sculptTouchAtPoint:(float )xcord :(float) ycord
 {
-  
+    
     //OpenGL Sculpt Setup
     
     //Transform delta to coordinate on model
     
-        //Line Tracing
+    //Line Tracing
     
     
     
 }
+
+
+
+@end
+@implementation SculptGLKVC
+
+
+-(instancetype)initWithGLKView: (GLKView*)glkViewParam {
+    
+    self = [super init];
+    
+    if(self) {
+        //Init With GLKView
+        _glkView = glkViewParam;
+        _glkView.userInteractionEnabled = YES;
+    }
+    
+    return self;
+}
+
 
 #pragma -mark viewDidLoad
 /**
@@ -69,7 +78,7 @@
  
  Description:
  - Performs methods after loading.
-
+ 
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -100,7 +109,7 @@
  
  Description:
  - Save data before closing the ViewController
-
+ 
  */
 -(void)viewWillDisappear:(BOOL)animated{
     
@@ -253,11 +262,11 @@
  - Helper Method
  - Reads User Defaults
  - Assigns Color accordingly
-
- @return savedVal  
+ 
+ @return savedVal
  -     If savedVal = 0 : Assume Keep Background Color
  -     Else if SavedVal !0 : Assume Change Background Color
-
+ 
  */
 #pragma -mark getUserSettingForBackgroundColor
 -(NSInteger)getUserSettingForBackgroundColor{
@@ -270,7 +279,7 @@
     
     //Return Value
     return savedVal;
-
+    
 }
 
 
