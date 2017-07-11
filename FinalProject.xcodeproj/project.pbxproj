@@ -28,6 +28,7 @@
 		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
 		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
 		DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF89F9871F053EA100775D57 /* WikipediaManager.m */; };
+		DF9C5E311F14F1020091BDDF /* CustomGlkView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5E301F14F1020091BDDF /* CustomGlkView.m */; };
 		DFA023811F0A523D00EE7844 /* WikipediaManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */; };
 		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
 		DFD811761F0A4ADC003A42CA /* TabOneVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */; };
@@ -78,6 +79,8 @@
 		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		DF89F9861F053EA100775D57 /* WikipediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaManager.h; sourceTree = "<group>"; };
 		DF89F9871F053EA100775D57 /* WikipediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManager.m; sourceTree = "<group>"; };
+		DF9C5E2F1F14F1020091BDDF /* CustomGlkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGlkView.h; sourceTree = "<group>"; };
+		DF9C5E301F14F1020091BDDF /* CustomGlkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGlkView.m; sourceTree = "<group>"; };
 		DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManagerTest.m; sourceTree = "<group>"; };
 		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabOneVCTest.m; path = ../TabOneVCTest.m; sourceTree = "<group>"; };
@@ -229,6 +232,8 @@
 			children = (
 				DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */,
 				DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */,
+				DF9C5E2F1F14F1020091BDDF /* CustomGlkView.h */,
+				DF9C5E301F14F1020091BDDF /* CustomGlkView.m */,
 			);
 			name = GLKit;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */,
 				DF51A0B41F03A37800D091FC /* main.m in Sources */,
 				DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */,
+				DF9C5E311F14F1020091BDDF /* CustomGlkView.m in Sources */,
 				DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */,
 				DF51A0E01F03AAC100D091FC /* TabOneVC.m in Sources */,
 				DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */,

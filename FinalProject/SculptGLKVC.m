@@ -26,6 +26,7 @@
  @param touches <#touches description#>
  @param event <#event description#>
  */
+
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     //Init Touch Point
@@ -58,7 +59,7 @@
 @implementation SculptGLKVC
 
 
--(instancetype)initWithGLKView: (GLKView*)glkViewParam {
+-(instancetype)initWithGLKView: (CustomGlkView*)glkViewParam {
     
     self = [super init];
     
@@ -84,17 +85,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    //Create GLKView
-    GLKView *glkView = (GLKView *)self.view;
-    
     //Create context
     EAGLContext *context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     
     //Set Context to GLKView
-    [glkView setContext:context];
+    [_glkView setContext:context];
     
     //Set Colour Format to GLKView
-    glkView.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
+    _glkView.drawableColorFormat = GLKViewDrawableColorFormatRGBA8888;
     
     //Set EAGL Context
     [EAGLContext setCurrentContext:context];
@@ -281,29 +279,6 @@
     return savedVal;
     
 }
-
-
-#pragma mark -Overriden glkView
--(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    
-    //Draw a triangle
-    
-    float *triangle = (float *)malloc(sizeof(float) * 6);
-    triangle[0] = 0.0;
-    triangle[2] = 1.0;
-    triangle[3] = 0.0;
-    triangle[4] = 0.0;
-    triangle[5] = -1.0;
-    
-    
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, triangle);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    
-}
-
 
 
 #pragma mark -Custom Setup Method

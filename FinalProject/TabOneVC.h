@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SculptGLKVC.h"
+#import "CustomGlkView.h"
 #import "WikipediaManager.h"
 
 
@@ -15,7 +15,7 @@
 
 /*Outlets*/
 
-@property (strong, nonatomic) IBOutlet GLKView *glkView;
+@property (strong, nonatomic) IBOutlet CustomGlkView *glkView;
 
 
 

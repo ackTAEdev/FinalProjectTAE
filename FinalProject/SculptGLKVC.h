@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <GLKit/GLKit.h>
+#import "CustomGlkView.h"
 
 
 @interface SculptGLKVC : GLKViewController
@@ -19,7 +20,7 @@
 @property (nonatomic) float sculptMovesCount;
 
 //Init of GLKView
-@property  GLKView *glkView;
+@property  CustomGlkView *glkView;
 
 /*Methods*/
 
