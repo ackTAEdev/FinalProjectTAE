@@ -23,7 +23,6 @@
 		DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0EB1F03AB2600D091FC /* TabBarRootVC.m */; };
 		DF51A0F01F03C3BC00D091FC /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0EF1F03C3BC00D091FC /* GLKit.framework */; };
 		DF51A0F21F03C3C200D091FC /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF51A0F11F03C3C200D091FC /* OpenGLES.framework */; };
-		DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */; };
 		DF89F9811F0539E700775D57 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9801F0539E700775D57 /* EventKit.framework */; };
 		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
 		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
@@ -72,8 +71,6 @@
 		DF51A0EB1F03AB2600D091FC /* TabBarRootVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarRootVC.m; sourceTree = "<group>"; };
 		DF51A0EF1F03C3BC00D091FC /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		DF51A0F11F03C3C200D091FC /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SculptGLKVC.h; sourceTree = "<group>"; };
-		DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SculptGLKVC.m; sourceTree = "<group>"; };
 		DF89F9801F0539E700775D57 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		DF89F9821F0539ED00775D57 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
 		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -230,8 +227,6 @@
 		DF51A0ED1F03ADD700D091FC /* GLKit */ = {
 			isa = PBXGroup;
 			children = (
-				DF51A0F31F03C56A00D091FC /* SculptGLKVC.h */,
-				DF51A0F41F03C56A00D091FC /* SculptGLKVC.m */,
 				DF9C5E2F1F14F1020091BDDF /* CustomGlkView.h */,
 				DF9C5E301F14F1020091BDDF /* CustomGlkView.m */,
 			);
@@ -363,7 +358,6 @@
 				DF51A0B71F03A37800D091FC /* AppDelegate.m in Sources */,
 				DF51A0C01F03A37800D091FC /* FinalProject.xcdatamodeld in Sources */,
 				DF3403F61F13C396004C0223 /* TabBarRootVC.swift in Sources */,
-				DF51A0F51F03C56A00D091FC /* SculptGLKVC.m in Sources */,
 				DF51A0B41F03A37800D091FC /* main.m in Sources */,
 				DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */,
 				DF9C5E311F14F1020091BDDF /* CustomGlkView.m in Sources */,

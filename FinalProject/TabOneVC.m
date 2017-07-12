@@ -8,7 +8,7 @@
 
 #import "TabOneVC.h"
 #import "AppDelegate.h"
-#import "SculptGLKVC.h"
+#import "CustomGlkView.h"
 #import "SculptObject+CoreDataClass.h"
 
 @interface TabOneVC ()<GLKViewControllerDelegate>
@@ -52,25 +52,6 @@
     
 }
 
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    
-    //Draw a triangle
-    
-    float *triangle = (float *)malloc(sizeof(float) * 6);
-    triangle[0] = 0.0;
-    triangle[2] = 1.0;
-    triangle[3] = 0.0;
-    triangle[4] = 0.0;
-    triangle[5] = -1.0;
-    
-    
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 0, triangle);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 3);
-    
-}
 # pragma mark - didReceiveMemoryWarning
 
 /**
