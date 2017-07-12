@@ -63,16 +63,22 @@
  
  - Take Screenshot
  - Save Image to File
-
+ 
  @param animated animated description
  */
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     
-    //Take Screenshot
-  UIImage *screenshot =  [self captureScreen];
+    [super viewDidAppear:animated];
     
-    //Save image into File
-    [self imageToFile: screenshot];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        //Take Screenshot
+        UIImage *screenshot =  [self captureScreen];
+        
+        //Save image into File
+        [self imageToFile: screenshot];
+    });
+    
     
     
 }
@@ -108,18 +114,29 @@
  Method: imageToFile
  
  Description:
-
+ 
  - Save Image to File
  
  @param image <#image description#>
  */
 - (void) imageToFile: (UIImage*) image {
     
-    // Create paths to output images
-    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"ImageDirectory/sculptImage.png"];
+    //Init Directory
+     NSString *destination = [NSTemporaryDirectory() stringByAppendingPathComponent:@"ImageDirectory"];
     
-    // Write image to PNG
-    [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+    //Init image file path
+    NSString *imageFileName = @"sculptImage.png";
+    
+    //Init Handle on File
+    NSFileHandle *fileHandle = [NSFileHandle fileHandleForReadingAtPath:[destination stringByAppendingPathComponent:imageFileName]];
+    
+    //Init Data
+    NSData *imageData = [NSData dataWithData:UIImagePNGRepresentation(image)];
+
+    
+    //Write Image to File
+    [fileHandle writeData:imageData];
+    
 }
 
 
@@ -128,9 +145,9 @@
  Method: captureScreen
  
  Description:
-
-- Takes a screenshot of the window
-
+ 
+ - Takes a screenshot of the window
+ 
  @return return image
  */
 - (UIImage*) captureScreen {
@@ -150,14 +167,20 @@
     //Set Context for Layer
     [keyWindow.layer renderInContext:context];
     
-    //Set Image
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    //Set Hierachy
+    [self.glkView drawViewHierarchyInRect:self.glkView.frame afterScreenUpdates:YES];
     
-    //Context Sort
+    //Set Image
+    UIImage *image = [UIImage imageNamed:@"sculptImage.png"];
+
+    //Set Image to Screen Image
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //Close Context
     UIGraphicsEndImageContext();
     
     //Return Image
-    return img;
+    return image;
 }
 
 

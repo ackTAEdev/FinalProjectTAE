@@ -153,9 +153,6 @@
     
 }
 
-
-
-
 #pragma  - mark parseFetchedDataOpenGL
 /**
  Method:parseFetchedDataOpenGL
@@ -197,7 +194,7 @@
     for (int i = 0; i < parseArrayNo_2.count; i++) {
         
         //Check if String Matches Intended String
-        if(parseArrayNo_2[i] == searchString) {
+        if([parseArrayNo_2[i] containsString:searchString] == YES) {
             
             //Assign Value to MatchString
             matchedString =  parseArrayNo_2[i];
