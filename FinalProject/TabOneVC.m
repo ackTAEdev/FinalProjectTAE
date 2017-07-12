@@ -30,16 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    //Init Context
     self.glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    
+    //Init GLKView
     self.glkView = [[CustomGlkView alloc] initWithFrame:self.container.bounds context:self.glContext];
+    
+    //Set Delegate
     self.glkView.delegate = self;
+    
+    //Init Container to Add SubView
     [self.container addSubview:self.glkView];
+    
+    //Set glkView
     [self.glkView setNeedsDisplay];
-    //Init SculptGLKVC
-    //    SculptGLKVC *sculptGLKVCObj = [[SculptGLKVC alloc] initWithGLKView:_glkView];
-    //    sculptGLKVCObj.delegate = self;
-    //Call glkView
-    //    [self.view addSubview:sculptGLKVCObj.view];
     
     //Fetch, Parse, Store, Retrieve & Set OpenGLVersion
     [self setupWebServiceWikipediaOpenGLVersion];
