@@ -54,8 +54,29 @@
     
     //Init edge behavours
     self.extendedLayoutIncludesOpaqueBars = NO;
+}
+
+
+#pragma -mark viewDidDisappear
+/**
+ Description
+ 
+ - Take Screenshot
+ - Save Image to File
+
+ @param animated animated description
+ */
+- (void)viewDidDisappear:(BOOL)animated {
+    
+    //Take Screenshot
+  UIImage *screenshot =  [self captureScreen];
+    
+    //Save image into File
+    [self imageToFile: screenshot];
+    
     
 }
+
 
 # pragma mark - didReceiveMemoryWarning
 
@@ -79,6 +100,65 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+
+
+#pragma -mark imageToFile
+/**
+ Method: imageToFile
+ 
+ Description:
+
+ - Save Image to File
+ 
+ @param image <#image description#>
+ */
+- (void) imageToFile: (UIImage*) image {
+    
+    // Create paths to output images
+    NSString  *pngPath = [NSHomeDirectory() stringByAppendingPathComponent:@"ImageDirectory/sculptImage.png"];
+    
+    // Write image to PNG
+    [UIImagePNGRepresentation(image) writeToFile:pngPath atomically:YES];
+}
+
+
+#pragma -mark captureScreen
+/**
+ Method: captureScreen
+ 
+ Description:
+
+- Takes a screenshot of the window
+
+ @return return image
+ */
+- (UIImage*) captureScreen {
+    
+    //Init Window
+    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
+    
+    //Init Rect
+    CGRect rect = [keyWindow bounds];
+    
+    //Set UIGraphic
+    UIGraphicsBeginImageContext(rect.size);
+    
+    //Init Context
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    //Set Context for Layer
+    [keyWindow.layer renderInContext:context];
+    
+    //Set Image
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //Context Sort
+    UIGraphicsEndImageContext();
+    
+    //Return Image
+    return img;
+}
 
 
 #pragma  - mark setupWebServiceWikipediaOpenGLVersion
