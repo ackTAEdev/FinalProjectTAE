@@ -33,7 +33,7 @@
 /**
  Function: tabBarVCSetup
  
- Description: 
+ Description:
  - Setups View Controllers of TabBarVC, TabOne, TabTwo
  
  */
@@ -50,7 +50,7 @@
     //Init & Assign Tab Bar Icons
     tabTwoVCObj.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Review" image:nil tag:0];
     tabOneVCObj.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Sculpt" image:nil tag:0];
-
+    
     /*Init Tab Bar Controllers to embedeed the View Controllers*/
     // Construct TabBarRootVC Object
     TabBarRootVC *tabBarRootVCObj = [[TabBarRootVC alloc] init];
@@ -144,7 +144,7 @@
                      * The device is out of space.
                      * The store could not be migrated to the current model version.
                      Check the error message to determine what the actual problem was.
-                    */
+                     */
                     NSLog(@"Unresolved error %@, %@", error, error.userInfo);
                     abort();
                 }

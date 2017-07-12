@@ -16,7 +16,7 @@
 //OpenGL Number
 @property float number;
 
-//Singleton Array 
+//Singleton Array
 @property (readonly, nonatomic) NSMutableArray *data;
 
 

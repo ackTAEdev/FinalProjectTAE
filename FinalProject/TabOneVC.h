@@ -11,7 +11,7 @@
 #import "WikipediaManager.h"
 
 
-@interface TabOneVC : UIViewController 
+@interface TabOneVC : UIViewController <GLKViewDelegate>
 
 /*Outlets*/
 

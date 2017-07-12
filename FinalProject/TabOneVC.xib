@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TabOneVC" customModule="FinalProject" customModuleProvider="target">
             <connections>
                 <outlet property="appNameLabelView" destination="4zk-v4-okI" id="TFU-9I-Fei"/>
-                <outlet property="glkView" destination="PQO-gN-F7F" id="V4a-nU-OyT"/>
+                <outlet property="container" destination="ZSP-gN-YK4" id="OEG-H5-uUk"/>
                 <outlet property="openGLVersionLabel" destination="xB1-Jj-ZOh" id="yJK-DZ-Cip"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,9 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" enableSetNeedsDisplay="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQO-gN-F7F" customClass="CustomGlkView" customModule="FinalProject" customModuleProvider="target">
-                    <rect key="frame" x="16" y="60" width="288" height="450"/>
-                </glkView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sculpt App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zk-v4-okI">
                     <rect key="frame" x="117.5" y="23" width="85" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -37,17 +34,21 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZSP-gN-YK4">
+                    <rect key="frame" x="16" y="52" width="288" height="467"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="xB1-Jj-ZOh" firstAttribute="top" secondItem="PQO-gN-F7F" secondAttribute="bottom" constant="17" id="3ep-bb-n7R"/>
-                <constraint firstItem="PQO-gN-F7F" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="FNu-qW-21O"/>
+                <constraint firstItem="ZSP-gN-YK4" firstAttribute="top" secondItem="4zk-v4-okI" secondAttribute="bottom" constant="8" id="5Ix-tb-6QQ"/>
                 <constraint firstItem="4zk-v4-okI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Isz-6C-ZDO"/>
                 <constraint firstItem="xB1-Jj-ZOh" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Je1-BC-l0k"/>
-                <constraint firstItem="PQO-gN-F7F" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ko9-cJ-Yoa"/>
-                <constraint firstItem="PQO-gN-F7F" firstAttribute="top" secondItem="4zk-v4-okI" secondAttribute="bottom" constant="16" id="aRV-RP-oZv"/>
-                <constraint firstAttribute="bottom" secondItem="PQO-gN-F7F" secondAttribute="bottom" constant="58" id="u7R-mu-8t5"/>
-                <constraint firstItem="PQO-gN-F7F" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="yfA-cJ-35c"/>
+                <constraint firstItem="4zk-v4-okI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="23" id="Wq2-zq-W9p"/>
+                <constraint firstItem="ZSP-gN-YK4" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="dlG-mv-Fnp"/>
+                <constraint firstAttribute="trailing" secondItem="ZSP-gN-YK4" secondAttribute="trailing" constant="16" id="dwI-pz-q8S"/>
+                <constraint firstItem="xB1-Jj-ZOh" firstAttribute="top" secondItem="ZSP-gN-YK4" secondAttribute="bottom" constant="8" id="uge-DQ-rBT"/>
+                <constraint firstAttribute="bottom" secondItem="xB1-Jj-ZOh" secondAttribute="bottom" constant="20" id="wIA-nF-jVp"/>
             </constraints>
             <point key="canvasLocation" x="34" y="54"/>
         </view>

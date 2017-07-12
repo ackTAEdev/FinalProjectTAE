@@ -16,7 +16,7 @@
  
  Description
  - Method to Force Singleton Behaviour
-
+ 
  @return Singleton
  */
 +(instancetype)sharedManager{
@@ -44,7 +44,7 @@
  - Helper method
  - Used to init a Singleton
  
-
+ 
  @return Singleton
  */
 -(instancetype)initPrivate
@@ -71,7 +71,7 @@
  Description
  - Helper Method
  - Used to alloc a zone to Singleton
-
+ 
  @param zone zone
  @return Singleton
  */
@@ -88,7 +88,7 @@
  
  Description
  - Helper Method
-
+ 
  @param zone Zone
  @return Self
  */
@@ -136,7 +136,7 @@
         else {
             
             //Parse Data
-          _number =  [self parseFetchedDataOpenGL:dictionary];
+            _number =  [self parseFetchedDataOpenGL:dictionary];
             
         }//End of Else Blcok
         
@@ -147,10 +147,10 @@
     
     //Start dataTask
     [dataTask resume];
-
+    
     //Return the Number
     return _number;
-
+    
 }
 
 
