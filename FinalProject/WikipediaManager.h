@@ -6,7 +6,7 @@
 //  Copyright © 2017 Akshay C Khanna. All rights reserved.
 //
 //
-
+//
 #import <Foundation/Foundation.h>
 
 @interface WikipediaManager : NSObject

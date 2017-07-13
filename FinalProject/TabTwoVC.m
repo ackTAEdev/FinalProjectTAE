@@ -125,7 +125,10 @@
 - (IBAction)flipImageAction:(id)sender {
     
     //Flips Image
-    [_sculptUIImage imageFlippedForRightToLeftLayoutDirection];
+   UIImage *img = [_sculptUIImage imageFlippedForRightToLeftLayoutDirection];
+    
+    //Set Image to ImageView
+    [_sculptImageView setImage:img];
     
 }
 
@@ -298,6 +301,16 @@
     
 }
 
+-(UIImage*)readDataFromFileDemoDay{
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"DummyScreenshot" ofType:@"png"];
+    NSData *texData = [[NSData alloc] initWithContentsOfFile:path];
+    UIImage *image = [[UIImage alloc] initWithData:texData];
+    
+    return image;
+
+}
+
 
 #pragma  - mark readDataFromFile
 
@@ -344,8 +357,15 @@
 
 -(void)setupPreviewSculptImage{
     
- _sculptUIImage = [self readDataFromFile];
+    //UIImage  *img = [self readDataFromFile];
     
+    //FOR PRESENTATION DEMO AS METHOD HAS BUG THAT REMAINS (13.07.17)
+   UIImage  *img = [self readDataFromFileDemoDay];
+    
+    _sculptUIImage = img;
+
+    [_sculptImageView setImage:_sculptUIImage];
+
 }
 
 

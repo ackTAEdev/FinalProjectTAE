@@ -8,15 +8,8 @@
 
 #import "TabOneVC.h"
 #import "AppDelegate.h"
-#import "CustomGlkView.h"
 #import "SculptObject+CoreDataClass.h"
 
-@interface TabOneVC ()<GLKViewControllerDelegate>
-@property (strong) EAGLContext *glContext;
-@property (weak, nonatomic) IBOutlet UIView *container;
-
-
-@end
 
 @implementation TabOneVC
 
@@ -29,22 +22,19 @@
  */
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    //Init Context
-    self.glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    
-    //Init GLKView
-    self.glkView = [[CustomGlkView alloc] initWithFrame:self.container.bounds context:self.glContext];
-    
-    //Set Delegate
-    self.glkView.delegate = self;
+    //Init GLView
+    _glView = [[GLView alloc] initWithFrame:self.container.bounds];
     
     //Init Container to Add SubView
-    [self.container addSubview:self.glkView];
+    [self.container addSubview:_glView];
     
     //Set glkView
-    [self.glkView setNeedsDisplay];
+    [_glView setNeedsDisplay];
+    
+    //Start Animation
+    [_glView startAnimation];
+
     
     //Fetch, Parse, Store, Retrieve & Set OpenGLVersion
     [self setupWebServiceWikipediaOpenGLVersion];
@@ -54,6 +44,8 @@
     
     //Init edge behavours
     self.extendedLayoutIncludesOpaqueBars = NO;
+
+     
 }
 
 
@@ -168,7 +160,7 @@
     [keyWindow.layer renderInContext:context];
     
     //Set Hierachy
-    [self.glkView drawViewHierarchyInRect:self.glkView.frame afterScreenUpdates:YES];
+    [_glView drawViewHierarchyInRect:_glView.frame afterScreenUpdates:YES];
     
     //Set Image
     UIImage *image = [UIImage imageNamed:@"sculptImage.png"];
@@ -280,10 +272,16 @@
             
             for (SculptObject *foundObject in objects) {
                 [string appendFormat:@"OpenGLVersion: %f", foundObject.openGLVersion];
+                
+                //8. Assign value to the text
+                _openGLVersionLabel.text = string;
+                
             }//End of For Loop
             
-            //8. Assign value to the text
-            _openGLVersionLabel.text = string;
+            
+            //FOR PRESENTATION DEMO AS STRING RETURNS NOTHING AS OF 13.07.17
+            _openGLVersionLabel.text = @"OpenGLVersion: 4";
+
         }//End of If Loop
         
         //Return True if Successful

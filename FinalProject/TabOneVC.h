@@ -5,19 +5,19 @@
 //  Created by Akshay C Khanna on 28/06/2017.
 //  Copyright © 2017 Akshay C Khanna. All rights reserved.
 //
-
+//
 #import <UIKit/UIKit.h>
-#import "CustomGlkView.h"
 #import "WikipediaManager.h"
+#import "GLView.h"
 
 
-@interface TabOneVC : UIViewController <GLKViewDelegate>
+@interface TabOneVC : UIViewController
 
 /*Outlets*/
 
-@property (strong, nonatomic) IBOutlet CustomGlkView *glkView;
+@property  GLView *glView;
 
-
+@property (weak, nonatomic) IBOutlet UIView *container;
 
 @property (strong, nonatomic) IBOutlet UILabel *appNameLabelView;
 

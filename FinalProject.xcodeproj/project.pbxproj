@@ -27,8 +27,14 @@
 		DF89F9831F0539ED00775D57 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9821F0539ED00775D57 /* EventKitUI.framework */; };
 		DF89F9851F0539FB00775D57 /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF89F9841F0539FB00775D57 /* AddressBookUI.framework */; };
 		DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF89F9871F053EA100775D57 /* WikipediaManager.m */; };
-		DF9C5E311F14F1020091BDDF /* CustomGlkView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF9C5E301F14F1020091BDDF /* CustomGlkView.m */; };
 		DFA023811F0A523D00EE7844 /* WikipediaManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */; };
+		DFC0F5EB1F17ABAB00C49FC2 /* Shaders.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0F5EA1F17ABAB00C49FC2 /* Shaders.m */; };
+		DFC0F5ED1F17ABB400C49FC2 /* matrix.c in Sources */ = {isa = PBXBuildFile; fileRef = DFC0F5EC1F17ABB400C49FC2 /* matrix.c */; };
+		DFC0F5F01F17ABC900C49FC2 /* vertex.vsh in Resources */ = {isa = PBXBuildFile; fileRef = DFC0F5EF1F17ABC900C49FC2 /* vertex.vsh */; };
+		DFC0F5F21F17ABCF00C49FC2 /* fragment.fsh in Resources */ = {isa = PBXBuildFile; fileRef = DFC0F5F11F17ABCF00C49FC2 /* fragment.fsh */; };
+		DFC0F5F41F17ABEB00C49FC2 /* TAEImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DFC0F5F31F17ABEB00C49FC2 /* TAEImage.png */; };
+		DFC0F5F61F17AD3500C49FC2 /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = DFC0F5F51F17AD3500C49FC2 /* GLView.m */; };
+		DFC0F5F91F17CCFC00C49FC2 /* DummyScreenshot.png in Resources */ = {isa = PBXBuildFile; fileRef = DFC0F5F81F17CCFC00C49FC2 /* DummyScreenshot.png */; };
 		DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DFC762241F04F26400F7BA24 /* Settings.bundle */; };
 		DFD811761F0A4ADC003A42CA /* TabOneVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */; };
 		DFD811781F0A4E34003A42CA /* TabTwoVCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DFD811771F0A4E34003A42CA /* TabTwoVCTest.m */; };
@@ -76,9 +82,17 @@
 		DF89F9841F0539FB00775D57 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		DF89F9861F053EA100775D57 /* WikipediaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WikipediaManager.h; sourceTree = "<group>"; };
 		DF89F9871F053EA100775D57 /* WikipediaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManager.m; sourceTree = "<group>"; };
-		DF9C5E2F1F14F1020091BDDF /* CustomGlkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomGlkView.h; sourceTree = "<group>"; };
-		DF9C5E301F14F1020091BDDF /* CustomGlkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomGlkView.m; sourceTree = "<group>"; };
 		DFA023801F0A523D00EE7844 /* WikipediaManagerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WikipediaManagerTest.m; sourceTree = "<group>"; };
+		DFC0F5E91F17ABA300C49FC2 /* Shaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shaders.h; sourceTree = "<group>"; };
+		DFC0F5EA1F17ABAB00C49FC2 /* Shaders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shaders.m; sourceTree = "<group>"; };
+		DFC0F5EC1F17ABB400C49FC2 /* matrix.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = matrix.c; sourceTree = "<group>"; };
+		DFC0F5EE1F17ABBD00C49FC2 /* matrix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matrix.h; sourceTree = "<group>"; };
+		DFC0F5EF1F17ABC900C49FC2 /* vertex.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = vertex.vsh; sourceTree = "<group>"; };
+		DFC0F5F11F17ABCF00C49FC2 /* fragment.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = fragment.fsh; sourceTree = "<group>"; };
+		DFC0F5F31F17ABEB00C49FC2 /* TAEImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TAEImage.png; sourceTree = "<group>"; };
+		DFC0F5F51F17AD3500C49FC2 /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		DFC0F5F71F17AD3A00C49FC2 /* GLView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		DFC0F5F81F17CCFC00C49FC2 /* DummyScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DummyScreenshot.png; sourceTree = "<group>"; };
 		DFC762241F04F26400F7BA24 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		DFD811751F0A4ADC003A42CA /* TabOneVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TabOneVCTest.m; path = ../TabOneVCTest.m; sourceTree = "<group>"; };
 		DFD811771F0A4E34003A42CA /* TabTwoVCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabTwoVCTest.m; sourceTree = "<group>"; };
@@ -176,6 +190,14 @@
 		DF51A0DB1F03A39100D091FC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DFC0F5F81F17CCFC00C49FC2 /* DummyScreenshot.png */,
+				DFC0F5F31F17ABEB00C49FC2 /* TAEImage.png */,
+				DFC0F5EF1F17ABC900C49FC2 /* vertex.vsh */,
+				DFC0F5F11F17ABCF00C49FC2 /* fragment.fsh */,
+				DFC0F5EE1F17ABBD00C49FC2 /* matrix.h */,
+				DFC0F5EC1F17ABB400C49FC2 /* matrix.c */,
+				DFC0F5E91F17ABA300C49FC2 /* Shaders.h */,
+				DFC0F5EA1F17ABAB00C49FC2 /* Shaders.m */,
 				DF51A0BE1F03A37800D091FC /* FinalProject.xcdatamodeld */,
 				DF51A0B51F03A37800D091FC /* AppDelegate.h */,
 				DF51A0B61F03A37800D091FC /* AppDelegate.m */,
@@ -227,8 +249,8 @@
 		DF51A0ED1F03ADD700D091FC /* GLKit */ = {
 			isa = PBXGroup;
 			children = (
-				DF9C5E2F1F14F1020091BDDF /* CustomGlkView.h */,
-				DF9C5E301F14F1020091BDDF /* CustomGlkView.m */,
+				DFC0F5F71F17AD3A00C49FC2 /* GLView.h */,
+				DFC0F5F51F17AD3500C49FC2 /* GLView.m */,
 			);
 			name = GLKit;
 			sourceTree = "<group>";
@@ -334,7 +356,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF25B5A01F16560F0018E042 /* TabOneVC.xib in Resources */,
+				DFC0F5F21F17ABCF00C49FC2 /* fragment.fsh in Resources */,
+				DFC0F5F41F17ABEB00C49FC2 /* TAEImage.png in Resources */,
+				DFC0F5F01F17ABC900C49FC2 /* vertex.vsh in Resources */,
 				DF51A0C21F03A37800D091FC /* Assets.xcassets in Resources */,
+				DFC0F5F91F17CCFC00C49FC2 /* DummyScreenshot.png in Resources */,
 				DF51A0E61F03AADA00D091FC /* TabTwoVC.xib in Resources */,
 				DFC762251F04F26400F7BA24 /* Settings.bundle in Resources */,
 				DF4DD99A1F0D3D6500B1F86C /* Launch Screen.storyboard in Resources */,
@@ -360,7 +386,9 @@
 				DF3403F61F13C396004C0223 /* TabBarRootVC.swift in Sources */,
 				DF51A0B41F03A37800D091FC /* main.m in Sources */,
 				DF51A0E51F03AADA00D091FC /* TabTwoVC.m in Sources */,
-				DF9C5E311F14F1020091BDDF /* CustomGlkView.m in Sources */,
+				DFC0F5F61F17AD3500C49FC2 /* GLView.m in Sources */,
+				DFC0F5ED1F17ABB400C49FC2 /* matrix.c in Sources */,
+				DFC0F5EB1F17ABAB00C49FC2 /* Shaders.m in Sources */,
 				DF51A0EC1F03AB2600D091FC /* TabBarRootVC.m in Sources */,
 				DF51A0E01F03AAC100D091FC /* TabOneVC.m in Sources */,
 				DF89F9881F053EA100775D57 /* WikipediaManager.m in Sources */,

@@ -118,7 +118,7 @@
     //Init URL
     NSURL *url = [NSURL URLWithString:websiteName];
     
-    
+    //
     //Error Checking
     id completionBlock = ^(NSData *data, NSURLResponse *response, NSError *error) {
         
