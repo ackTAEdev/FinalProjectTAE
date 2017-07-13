@@ -109,7 +109,8 @@
  
  @param websiteName Site to Fetch
  */
--(float)fetchDataFromSite:(NSString*) websiteName {
+-(float)fetchDataFromSite:(NSString*) websiteName :(void(^)(float)) complete {
+    
     
     //Init NSURL Session
     NSURLSession *session = [NSURLSession sharedSession];
@@ -137,6 +138,10 @@
             
             //Parse Data
             _number =  [self parseFetchedDataOpenGL:dictionary];
+            
+            //Call Completion Block
+            complete(_number);
+            
             
         }//End of Else Blcok
         

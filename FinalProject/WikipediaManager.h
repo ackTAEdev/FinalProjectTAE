@@ -32,7 +32,7 @@
 - (id)copyWithZone:(NSZone *)zone;
 
 //Fetch Data from Wikipedia
--(float)fetchDataFromSite:(NSString*) websiteName;
+-(float)fetchDataFromSite:(NSString*) websiteName: (void(^)(float)) complete;
 
 //Helper Method to fetchDataFromSite
 -(float)parseFetchedDataOpenGL:(NSDictionary*) dict;

@@ -206,14 +206,28 @@
         //Init Wikipedia Manager with Singleton Class
         _wikiManager = [WikipediaManager sharedManager];
         
+        
+        id fetchedNumber = ^(float number){
+            
+            NSLog(@"Value: %f", number);
+            
+            //Add to the Asynchron Queue
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                //Store Data into CoreData
+                [self saveDataToCoreData:number];
+                
+                //Fetch Data from CoreData
+                [self fetchDataFromCoreData];
+                
+            });
+            
+        };
+        
         //Init DataTask by Fetching Data
-        _openGLVersionNumber = [_wikiManager fetchDataFromSite:urlWikiOpenGL];
+        _openGLVersionNumber = [_wikiManager fetchDataFromSite:urlWikiOpenGL :fetchedNumber];
         
-        //Store Data into CoreData
-        [self saveDataToCoreData];
-        
-        //Fetch Data from CoreData
-        [self fetchDataFromCoreData];
+      
         
         //Return True if Successful
         return true;
@@ -292,7 +306,7 @@
  - Save OpenGLVersion to the CoreData
  
  */
--(bool)saveDataToCoreData{
+-(bool)saveDataToCoreData:(float) number{
     
     //Init Test Flag
     int testFlag = 1;
@@ -313,7 +327,7 @@
         SculptObject *newSculptObject = [[SculptObject alloc] initWithContext:context];
         
         //4. Set the values
-        [newSculptObject setSculptMoves:_openGLVersionNumber];
+        [newSculptObject setOpenGLVersion:number];
         
         //Return True if Successful
         return true;
